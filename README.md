@@ -14,4 +14,4 @@ Easy options:
 
 4. Run `gulp sass` and start you code!
 
-You'r welcome!
+You are welcome!
