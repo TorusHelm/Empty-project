@@ -6,7 +6,7 @@
 Easy options:
 
 
-1. `git init`;
+1. Run `git init`;
 
 2. Clone the git repo — `git clone (url)`;
 
