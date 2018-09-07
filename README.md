@@ -12,6 +12,6 @@ Easy options:
 
 3. Run `npm install`;
 
-4. Run `gulp sass` and start you code!
+4. Run `gulp sass:watch` and start you code!
 
 You are welcome!
