@@ -3,6 +3,7 @@
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var browserSync = require('browser-sync');
+var autoprefixer = require('gulp-autoprefixer');
 // var fileinclude = require('gulp-file-include');
 // var del = require('del');
 var gulp = require('gulp');
@@ -23,6 +24,10 @@ var gulp = require('gulp');
 gulp.task('sass', function () {
 	return gulp.src('./src/sass/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
 		.pipe(gulp.dest('./src/css/'))
 		.pipe(browserSync.reload({
 			stream: true
