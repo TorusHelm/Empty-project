@@ -19,10 +19,19 @@ $(document).ready(function(){
     });
 });
 
+$(window).on('scroll', function(){
+    if($(window).scrollTop() === 0){
+        $('[positionTop]').attr('positionTop', 'true');
+    } else {
+        $('[positionTop]').attr('positionTop', 'false');
+    }
+});
+
 ymaps.ready(function () {
     var myMap = new ymaps.Map('map', {
             center: [59.986821, 30.321258],
-            zoom: 16
+            zoom: 16,
+            controls: []
         }, {
             searchControlProvider: 'yandex#search'
         }),

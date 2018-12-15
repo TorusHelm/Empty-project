@@ -18,6 +18,18 @@
     align-items: center;
     z-index: 10;
     padding: 0 0 0 20px;
+    @include respond-to(tablet){
+        background-color: $logo;
+        padding: 0 0 0 50px;
+        height: 66px;
+    }
+    @include respond-to(desktop){
+        padding: 0;
+        background-color: transparent;
+        @at-root [positionTop="false"] &{
+            background-color: $logo;
+        }
+    }
     &_fixed{
         position: fixed;
         width: 100%;
@@ -27,11 +39,18 @@
     &__empty{
         height: 50px;
         width: 100%;
+        @include respond-to(tablet){
+            height: 66px;
+        }
+        @include respond-to(desktop){
+            height: 0;
+        }
     }
     &__number{
         font-size: $fz-def;
         @include respond-to(tablet){
             font-size: $fz-md;
+            color: $white;
         }
     }
     &__lang{
@@ -39,6 +58,15 @@
         font-size: $fz-sm;
         @include respond-to(tablet){
             font-size: $fz-def;
+            color: $white;
+        }
+        @include respond-to(desktop){
+            position: absolute;
+            right: 150px;
+        }
+        @include respond-to(desktopPlus){
+            position: absolute;
+            left: 60px;
         }
     }
     &__arrow{
@@ -49,6 +77,14 @@
             @include respond-to(tablet){
                 filter: brightness(1);
             }
+        }
+        @include respond-to(desktop){
+            position: absolute;
+            right: 100px;
+        }
+        @include respond-to(desktopPlus){
+            position: absolute;
+            left: 80px;
         }
     }
 }
@@ -84,6 +120,14 @@
 [menuState="open"] .menu{
     top: 0;
 }
+.logo{
+    width: auto;
+    height: 37px;
+    vertical-align: baseline;
+    @include respond-to(desktop){
+        margin-right: 30px;
+    }
+}
 .toogler{
     z-index: 1;
     height: 50px;
@@ -93,9 +137,17 @@
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
+    @include respond-to(desktop){
+        position: absolute;
+        right: 0;
+    }
+    @include respond-to(desktopPlus){
+        position: absolute;
+        right: 0;
+    }
     &__main{
         display: block;
-        width: 20px;
+        width: 28px;
         height: 2px;
         background-color: $color-toogler;
         position: relative;
@@ -109,7 +161,7 @@
             width: 100%;
             background-color: $color-toogler;
             position: absolute;
-            bottom: 5px;
+            bottom: 8px;
             transition: all 0.3s ease-in-out;
             @at-root [menuState="open"] &{
                 transform: rotate(45deg);
@@ -122,7 +174,7 @@
             width: 100%;
             background-color: $color-toogler;
             position: absolute;
-            top: 5px;
+            top: 8px;
             transition: all 0.3s ease-in-out;
             @at-root [menuState="open"] &{
                 transform: rotate(-45deg);
@@ -130,10 +182,46 @@
             }
         }
     }
+    @include respond-to(tablet){
+        height: 66px;
+        width: 66px;
+        background-color: $white;
+    }
 }
 .banner{
     padding: 40px 20px;
     color: $color-white;
+    position: relative;
+    @include respond-to(tablet){
+        padding: 75px 50px 90px;
+    }
+    @include respond-to(desktop){
+        flex: 0 0 60%;
+        padding: 210px 0px 325px;
+    }
+    &__bg{
+        &_desk{
+            @include respond-to(desktop){
+                background-image: radial-gradient(circle 761px at center, #0c62bb 0%, #004a8d 100%);
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 60vw;
+                z-index: -1;
+            }
+        }
+    }
+    &_bugfix{
+        @include respond-to(desktop){
+            height: 225px;
+            width: 100%;
+            background-color: $gray;
+            flex: 0 0 100%;
+            transform: scaleX(10);
+            z-index: -1;
+        }
+    }
 }
 .title{
     font-size: $fz-md;
@@ -143,17 +231,8 @@
         margin-bottom: 20px;
         font-family: $ff-Bold;
         color: $color-primal;
-    }
-    &__section{
-        font-family: $ff-Bold;
-        margin-bottom: 40px;
-        font-size: $fz-md;
-        text-align: center;
-        @at-root .bg_primal &{
-            margin-bottom: 60px;
-        }
-        &_sm{
-            font-size: $fz-normal;
+        @include respond-to(tablet){
+            font-size: $fz-big;
         }
     }
     &__main{
@@ -162,6 +241,50 @@
         &_alone{
             margin: 30px 0;
             text-align: center;
+            @include respond-to(tablet){
+                font-size: $fz-big;
+            }
+        }
+        @at-root .banner &{
+            @include respond-to(tablet){
+                font-size: $fz-mega;
+            }
+            @include respond-to(desktop){
+                font-size: $fz-big*2;
+            }
+        }
+    }
+    &__section{
+        font-family: $ff-Bold;
+        margin-bottom: 40px;
+        font-size: $fz-md;
+        text-align: center;
+        @include respond-to(tablet){
+            font-size: $fz-def*2;
+            margin-bottom: 70px;
+        }
+        @include respond-to(desktop){
+            text-align: left;
+        }
+        @at-root .bg_primal &{
+            margin-bottom: 60px;
+        }
+        &_sm{
+            font-size: $fz-normal;
+        }
+        &_big{
+            @include respond-to(tablet){
+                font-size: $fz-lg*2;
+                margin-bottom: 100px;
+            }
+        }
+        &.text_tb-big{
+            @include respond-to(tablet){
+                font-size: $fz-big;
+            }
+        }
+        @at-root .news-block &{
+            margin-bottom: 50px;
         }
     }
 }
@@ -170,24 +293,59 @@
     font-family: $ff-Bold;
     letter-spacing: 0.5px;
     margin-bottom: 25px; 
+    @include respond-to(tablet){
+        font-size: $fz-md;
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
 }
 .par{
     font-size: $fz-xs;
     font-family: $ff-Reg;
     letter-spacing: 0.35px;
+    @include respond-to(tablet){
+        font-size: $fz-normal;
+    }
     &__card{
         font-size: $fz-sm;
         color: $color-second;
+        @include respond-to(tablet){
+            font-size: $fz-normal;
+        }
     }
     @at-root .banner &{
         margin-bottom: 35px;
         letter-spacing: 0.5px;
+        font-size: $fz-normal;
+        @include respond-to(tablet){
+            margin-block-end: 40px;
+        }
+        @include respond-to(desktop){
+            max-width: 627px;
+        }
     }
     &_allwaysDef{
         font-size: $fz-def;
     }
+    @at-root .bg_primal &{
+        @include respond-to(tablet){
+            order: 9;
+            font-size: $fz-big;
+        }
+    }
+}
+.icons{
+    margin-bottom: 40px;
+    margin-top: 0px; 
+    @include respond-to(tablet){
+        order: 10;
+        margin-top: 40px;
+        margin-bottom: 0px;
+        font-size: $fz-lg;
+    }
 }
 .btn{
+    display: inline-block;
     padding: 16px 18px 14px;
     font-size: 11px;
     text-transform: uppercase;
@@ -202,31 +360,114 @@
     &:focus{
         outline: none;
     }
+    @include respond-to(tablet){
+        padding: 22px 30px 20px 30px;
+        font-size: $fz-sm;
+    }
 }
 .img{
     max-width: 100%;
+    margin: auto;
     &-container{
-
+        @include respond-to(desktop){
+            flex: 0 0 40%;
+            position: relative;
+        }
+        img{
+            @include respond-to(tablet){
+                height: auto;
+                width: 100%;
+            }
+            @include respond-to(desktop){
+                max-width: none;
+                height: auto;
+                width: auto;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
     }
     &-absolute{
         padding: 22px;
         background-color: $gray;
         box-shadow: 0 0 27px 3px rgba(0, 0, 0, 0.05);
+        @include respond-to(tablet){
+            padding: 67px 67px 44px;
+        }
+        @include respond-to(desktop){
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            min-height: 450px;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
 .section{
     padding: 40px 20px;
+    @include respond-to(tablet){
+        padding: 80px 50px;
+    }
+    &__main{
+        position: relative;
+        @include respond-to(desktop){
+            display: flex;
+            overflow: hidden;
+            background-color: $gray;
+            z-index: -1;
+        }
+    }
     &__noSpaceY{
         padding-top: 0px;
         padding-bottom: 0px;
+        @include respond-to(tablet){
+            padding: 0 50px;
+        }
     }
     &_botSm{
         padding: 40px 20px 20px;
+        @include respond-to(tablet){
+            padding: 80px 50px 60px;
+        }
+    }
+    &.bg_primal{
+        display: flex;
+        flex-direction: column;
+        @include respond-to(tablet){
+            padding: 100px 50px;
+        }
+    }
+}
+.wrapper{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 100%;
+    &_flex{
+        @include respond-to(desktop){
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    @at-root .header &{
+        display: flex;
+        align-items: center;
+        position: initial;
     }
 }
 .bg{
     &_primal{
         background-image: radial-gradient(circle 254px at center, #0c62bb 0%, #004a8d 100%);
+        @include respond-to(desktop){
+            @at-root .section__main &{
+                background-image: none;
+            }
+        }
     }
 }
 .card{
@@ -235,15 +476,41 @@
     }
     &__header{
         margin-bottom: 40px;
+        @include respond-to(tablet){
+            margin-bottom: 65px;
+        }
         &_sm{
             margin-bottom: 20px;
+            text-align: center;
+        @include respond-to(tablet){
+                margin-bottom: 30px;
+            }
         }
+    }
+    @include respond-to(tablet){
+        padding: 0 30px;
+        .par{
+            @include respond-to(tablet){
+                font-size: $fz-sm;
+            }
+        }
+        &:first-child{
+            padding-left: 0px;
+        }
+        &:last-child{
+            padding-right: 0px;
+        }
+
     }
 }
 .list{
     list-style-type: none;
     font-size: $fz-sm;
     margin-bottom: 30px;
+    @include respond-to(tablet){
+        font-size: $fz-normal;
+        margin-bottom: 40px;
+    }
     &__primal{
         color: $color-primalList;
         line-height: normal;
@@ -286,11 +553,22 @@
         }
     }
     @at-root .bg_primal &{
-        margin-bottom: 40px;
+        margin-bottom: 0;
+        @include respond-to(tablet){
+            max-width: 565px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+        }
         &__item{
             color: $white;
             font-size: $fz-def;
             font-weight: normal;
+            @include respond-to(tablet){
+                font-size: $fz-big;
+                padding-left: 50px;
+                margin-bottom: 65px;
+            }
             &::before{
                 display: none;
             }
@@ -301,6 +579,9 @@
             position: absolute;
             left: 0;
             line-height: 1;
+            @include respond-to(tablet){
+                font-size: $fz-def*2;
+            }
         }
     }
     @at-root .menu &{
@@ -339,6 +620,10 @@
 .container{
     &_carousel{
         margin-bottom: 10px;
+        @include respond-to(tablet){
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 .hr{
@@ -349,12 +634,18 @@
 }
 .cestern{
     margin-bottom: 50px;
+    @include respond-to(tablet){
+        margin-left: auto; 
+        margin-right: auto; 
+    }
 }
 .row{
     display: flex;
     flex-direction: row;
     &_gap-md{
-        margin-bottom: 30px;
+        &:not(:last-of-type){
+            margin-bottom: 30px;
+        }
     }
     &_vcenter{
         align-items: center;
@@ -372,15 +663,67 @@
 }
 .ico{
     padding: 0 30px 0 10px;
+    max-width: 120px;
 }
 .news{
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+        @include respond-to(tablet){
+            display: flex;
+            text-align: initial;
+        }
     &__item{
         margin-bottom: 35px;
+        position: relative;
+        @include respond-to(tablet){
+            max-width: 280px;
+            margin-bottom: 30px;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                top: 65px;
+                right: -20px;
+                height: 100px;
+                width: 84px;
+                z-index: -1;
+                background-color: $shadow-box;
+            }
+        }
+        &_main{
+            @include respond-to(tablet){
+                max-width: 350px;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 143px;
+                    right: -20px;
+                    height: 153px;
+                    width: 127px;
+                    z-index: -1;
+                    background-color: $shadow-box;
+                }
+            }
+        }
+    }
+    &__aside{
+        @include respond-to(tablet){
+            display: inline-block;
+        }
     }
     &__date{
         font-size: $fz-xs;
-
         margin-bottom: 8px;
+        @include respond-to(tablet){
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: $color-gray;
+            font-size: $fz-lg/2;
+        }
     }
     &__lable{
         color: inherit;
@@ -400,14 +743,48 @@
                 display: none;
             }
         }
+        @include respond-to(tablet){
+            font-size: $fz-sm;
+            display: block;
+            margin-top: 10px;
+            &::before{
+                display: none;
+            }
+        }
+    }
+    &__img{
+        display: none;
+        overflow: hidden;
+        position: relative;
+        @include respond-to(tablet){
+            display: block;
+            height: 146px;
+        }
+        &_main{
+            display: none;
+            @include respond-to(tablet){
+                display: block;
+                height: 275px;
+            }
+        }
     }
 }
 .contacts{
     display: flex;
     flex-direction: column;
+    @include respond-to(tablet){
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 70px;
+        padding-top: 45px;
+    }
     &__item{
         margin-bottom: 45px;
         flex: 0 0 100%;
+        @include respond-to(tablet){
+            flex: 0 0 50%;
+        }
     }
     &__title{
         flex: 0 0 100%;
@@ -417,6 +794,9 @@
         color: $color-second;
         text-transform: uppercase;
         text-align: center;
+        @include respond-to(tablet){
+            text-align: initial;
+        }
     }
     &__link{
         display: block;
@@ -437,6 +817,9 @@
     &__content{
         display: flex;
         justify-content: center;
+        @include respond-to(tablet){
+            justify-content: initial;
+        }
     }
     &__main{
         flex: 0 1 auto;
@@ -451,6 +834,9 @@
     position: relative;
     &__top{
         height: 55px;
+        @include respond-to(tablet){
+            height: 160px;
+        }
     }
     &__address{
         display: flex;
@@ -461,6 +847,10 @@
         padding: 0 20px 40px;
         background-color: $footer-bg;
         height: 378px;
+        @include respond-to(tablet){
+            padding: 0 50px 80px;
+            height: 590px;
+        }
     }
     &__map{
         height: 336px;
@@ -470,6 +860,21 @@
         left: 20px;
         background: #000;
         box-shadow: 0 0 27px 3px rgba(0, 0, 0, 0.1);
+        @include respond-to(tablet){
+            width: calc(100% - 100px);
+            left: 50px;
+            height: 544px;
+        }
+        @include respond-to(desktop){
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+.flex{
+    @include respond-to(tablet){
+        display: flex;
+        flex-direction: row;
     }
 }
 

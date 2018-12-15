@@ -1,6 +1,7 @@
 $mobile: 320px;
 $tablet: 768px;
 $desktop: 1200px;
+$desktopPlus: 1440px;
 
 @mixin respond-to($media) {
   @if $media == mobile {
@@ -11,5 +12,8 @@ $desktop: 1200px;
   }
   @else if $media == desktop {
     @media only screen and (min-width: $desktop) { @content; }
+  }
+  @else if $media == desktopPlus {
+    @media only screen and (min-width: $desktopPlus) { @content; }
   }
 }

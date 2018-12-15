@@ -45,3 +45,26 @@
         }
     }
 }
+.d{
+    &-tb{
+        &-none{
+            @include respond-to(tablet){
+                display: none;
+            }
+        }
+    }
+    &-desk{
+        &-block{
+            @include respond-to(desktop){
+                display: block;
+            }
+        }
+    }
+}
+.order{
+    &-tb{
+        &-1{
+            order: -1;
+        }
+    }
+}
