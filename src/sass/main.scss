@@ -1,15 +1,477 @@
 @import "base";
+@import "fonts";
+@import "media-mixins";
+@import "var";
 
-body {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+.body {
+    font-family: $ff-Reg;
+    font-size: $fz-def;
+    line-height: normal;
+    @at-root [menuState="open"]{
+        overflow: hidden;
+    }
+}
+.header{
+    height: 50px;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    padding: 0 0 0 20px;
+    &_fixed{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    &__empty{
+        height: 50px;
+        width: 100%;
+    }
+    &__number{
+        font-size: $fz-def;
+        @include respond-to(tablet){
+            font-size: $fz-md;
+        }
+    }
+    &__lang{
+        margin-left: auto;
+        font-size: $fz-sm;
+        @include respond-to(tablet){
+            font-size: $fz-def;
+        }
+    }
+    &__arrow{
+        padding-right: 15px;
+        padding-left: 15px;
+        & img {
+            filter: brightness(0);
+            @include respond-to(tablet){
+                filter: brightness(1);
+            }
+        }
+    }
+}
+.menu{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    transition: all 0.3s ease-in-out;
+    background-color: $white;
+    padding: 85px 10px 60px;
+    text-align: center;
+    &__title{
+        color: $logo;
+        font-size: $fz-lg;
+        font-family: $ff-Bold;
+    }
+    &__wrapper{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    &__policy{
+        font-size: $fz-xs;
+        letter-spacing: 0.35px;
+        color: #333333;
+        display: block;
+        margin-top: auto;
+    }
+}
+[menuState="open"] .menu{
+    top: 0;
+}
+.toogler{
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    &__main{
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: $color-toogler;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        @at-root [menuState="open"] &{
+            background-color: transparent;
+        }
+        &::before{
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-color: $color-toogler;
+            position: absolute;
+            bottom: 5px;
+            transition: all 0.3s ease-in-out;
+            @at-root [menuState="open"] &{
+                transform: rotate(45deg);
+                transform-origin: 5px 5px;
+            }
+        }
+        &::after{
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-color: $color-toogler;
+            position: absolute;
+            top: 5px;
+            transition: all 0.3s ease-in-out;
+            @at-root [menuState="open"] &{
+                transform: rotate(-45deg);
+                transform-origin: 4px -3px;
+            }
+        }
+    }
+}
+.banner{
+    padding: 40px 20px;
+    color: $color-white;
+}
+.title{
+    font-size: $fz-md;
+    margin-bottom: 20px;
+    font-family: $ff-Bold;
+    &__card{
+        margin-bottom: 20px;
+        font-family: $ff-Bold;
+        color: $color-primal;
+    }
+    &__section{
+        font-family: $ff-Bold;
+        margin-bottom: 40px;
+        font-size: $fz-md;
+        text-align: center;
+        @at-root .bg_primal &{
+            margin-bottom: 60px;
+        }
+        &_sm{
+            font-size: $fz-normal;
+        }
+    }
+    &__main{
+        font-size: $fz-lg;
+        font-family: $ff-Bold;
+        &_alone{
+            margin: 30px 0;
+            text-align: center;
+        }
+    }
+}
+.subtitle{
+    font-size: $fz-xs;
+    font-family: $ff-Bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px; 
+}
+.par{
+    font-size: $fz-xs;
+    font-family: $ff-Reg;
+    letter-spacing: 0.35px;
+    &__card{
+        font-size: $fz-sm;
+        color: $color-second;
+    }
+    @at-root .banner &{
+        margin-bottom: 35px;
+        letter-spacing: 0.5px;
+    }
+    &_allwaysDef{
+        font-size: $fz-def;
+    }
+}
+.btn{
+    padding: 16px 18px 14px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: $color-btn;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid $btn-bg;
+    border-radius: 50px;
+    font-family: $ff-Med;
+    text-decoration: none;
+    &:focus{
+        outline: none;
+    }
+}
+.img{
+    max-width: 100%;
+    &-container{
+
+    }
+    &-absolute{
+        padding: 22px;
+        background-color: $gray;
+        box-shadow: 0 0 27px 3px rgba(0, 0, 0, 0.05);
+    }
+}
+.section{
+    padding: 40px 20px;
+    &__noSpaceY{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    &_botSm{
+        padding: 40px 20px 20px;
+    }
+}
+.bg{
+    &_primal{
+        background-image: radial-gradient(circle 254px at center, #0c62bb 0%, #004a8d 100%);
+    }
+}
+.card{
+    &:not(:last-of-type){
+        margin-bottom: 40px;
+    }
+    &__header{
+        margin-bottom: 40px;
+        &_sm{
+            margin-bottom: 20px;
+        }
+    }
+}
+.list{
+    list-style-type: none;
+    font-size: $fz-sm;
+    margin-bottom: 30px;
+    &__primal{
+        color: $color-primalList;
+        line-height: normal;
+    }
+    &__item{
+        padding-left: 27px;
+        margin-bottom: 20px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 10px;
+            height: 1px;
+            width: 12px;
+            background-color: $dark-dot;
+        }
+        @at-root .list__primal &{
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0px;
+                top: 6px;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                border: 1px solid $primal-dot;
+                background-color: transparent;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                left: 3px;
+                top: 9px;
+                width: 6px;
+                height: 6px;
+                border-radius: 100%;
+                background: $primal-dot;
+            }
+        }
+    }
+    @at-root .bg_primal &{
+        margin-bottom: 40px;
+        &__item{
+            color: $white;
+            font-size: $fz-def;
+            font-weight: normal;
+            &::before{
+                display: none;
+            }
+        }
+        &__label{
+            font-size: $fz-normal;
+            color: $label;
+            position: absolute;
+            left: 0;
+            line-height: 1;
+        }
+    }
+    @at-root .menu &{
+        &__item{
+            font-size: $fz-def;
+            text-transform: uppercase;
+            line-height: 1;
+            font-family: $ff-Bold;
+            padding: 0px;
+            margin: 25px;
+            &::before{
+                display: none;
+            }
+        }
+        &__link{
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            &::before{
+                content: '';
+                transition: all 0.3s ease-in-out;
+                width: 0;
+                height: 2px;
+                background-color: #000000;
+                position: absolute;
+                bottom: 0px;
+            }
+            &:hover{
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.container{
+    &_carousel{
+        margin-bottom: 10px;
+    }
+}
+.hr{
+    height: 3px;
+    width: 175px;
+    background-color: $hr;
+    margin: auto;
+}
+.cestern{
+    margin-bottom: 50px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    &_gap-md{
+        margin-bottom: 30px;
+    }
+    &_vcenter{
+        align-items: center;
+    }
+}
+.col{
+    &_4{
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+    &_8{
+        flex: 0 0 66.66666%;
+        max-width: 66.66666%;
+    }
+}
+.ico{
+    padding: 0 30px 0 10px;
+}
+.news{
+    &__item{
+        margin-bottom: 35px;
+    }
+    &__date{
+        font-size: $fz-xs;
+
+        margin-bottom: 8px;
+    }
+    &__lable{
+        color: inherit;
+        font-size: $fz-normal;
+        text-decoration: none;
+        position: relative;
+        &::before{
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: $black;
+            position: absolute;
+            bottom: 0px;
+        }
+        &:hover{
+            &::before{
+                display: none;
+            }
+        }
+    }
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    &__item{
+        margin-bottom: 45px;
+        flex: 0 0 100%;
+    }
+    &__title{
+        flex: 0 0 100%;
+        font-size: $fz-normal;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+        color: $color-second;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__link{
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+        line-height: 1;
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+    }
+    &__social{
+        display: inline-block;
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: center;
+    }
+    &__main{
+        flex: 0 1 auto;
+        font-size: $fz-normal;
+    }
+    &__ico{
+        flex: 0 0 auto;
+        padding-right: 10px;
+    }
+}
+.footer{
+    position: relative;
+    &__top{
+        height: 55px;
+    }
+    &__address{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        font-size: $fz-xs;
+        color: $color-white;
+        padding: 0 20px 40px;
+        background-color: $footer-bg;
+        height: 378px;
+    }
+    &__map{
+        height: 336px;
+        width: calc(100% - 40px);
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        background: #000;
+        box-shadow: 0 0 27px 3px rgba(0, 0, 0, 0.1);
+    }
 }
 
-.example {
-    display: grid;
-    transition: all .5s;
-    user-select: none;
-    background: linear-gradient(to bottom, white, black);
-}
+
+@import "tools";

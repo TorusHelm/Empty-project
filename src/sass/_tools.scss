@@ -1,0 +1,47 @@
+.text{
+    &_bold{
+        font-family: $ff-Bold;
+    }
+    &_center{
+        text-align: center;
+    }
+    &_white{
+        color: $color-white;
+    }
+    &_lt-md{
+        letter-spacing: 0.5px;
+    }
+}
+.fz{
+    &_normal{
+        font-size: $fz-normal;
+    }
+}
+.m{
+    &b{
+        &_sm{
+            margin-bottom: 20px;
+        }
+    }
+}
+.p{
+    &x{
+        &_sm{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        &_md{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+.bg{
+    &-tb{
+        &_gray{
+            @include respond-to(tablet){
+                background-color: $gray;
+            }
+        }
+    }
+}

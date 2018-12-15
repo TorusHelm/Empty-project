@@ -13,24 +13,307 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body class="body" menuState="close" id="main">
     <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
+    <div class="header__empty"></div>
+    <header class="header header_fixed">
+        <div class="header__number">+7 (812) <span class="text_bold">309 95 16</span></div>
+        <div class="header__lang">RU</div>
+        <div class="header__arrow"><img src="img/arrow.png" alt=""></div>
+        <div class="toogler" id="js_menuBtn">
+            <span class="toogler__main"></span>
+        </div>
+        <div class="menu">
+            <div class="menu__wrapper">
+                <a href="#main" class="js_anchor menu__title">
+                    Регент Балтика
+                </a>
+                <ul class="list">
+                    <li class="list__item"><a class="js_anchor list__link" href="#first">Производство ППУ</a></li>
+                    <li class="list__item"><a class="js_anchor list__link" href="#second">Изотермические панели</a></li>
+                    <li class="list__item"><a class="js_anchor list__link" href="#third">Применение</a></li>
+                    <li class="list__item"><a class="js_anchor list__link" href="#fourth">Энергоэффективные  дома</a></li>
+                    <li class="list__item"><a class="js_anchor list__link" href="#fifth">Новости</a></li>
+                    <li class="list__item"><a class="js_anchor list__link" href="#sixth">Контакты</a></li>
+                </ul>
+                <a href="#" class="menu__policy">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="section__main">
+            <div class="banner bg_primal">
+                <h1 class="title__main">ООО "Регент Балтика"</h1>
+                <h2 class="subtitle">Интеграция технологий и производства</h2>
+                <p class="par">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <a href="javascript: void(0);" class="btn">скачать презентацию</a>
+            </div>
+            <div class="img-container">
+                <img class="img" src="img/Machine.jpg" alt="">
+            </div>
+            <div class="img-absolute">
+                <img class="img" src="img/line.png" alt="">
+            </div>
+        </section>
+        <section class="section text_center bg-tb_gray" id="first">
+            <h2 class="title__section">Производство ППУ</h2>
+            <div class="card">
+                <div class="card__header">
+                    <img class="img" src="img/ppp1.png" alt="">
+                </div>
+                <div class="card__content">
+                    <h3 class="title__card">Блоки из ППУ</h3>
+                    <p class="par__card">Серийное производство. Стандартные блоки.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__header">
+                    <img class="img" src="img/ppp2.png" alt="">
+                </div>
+                <div class="card__content">
+                    <h3 class="title__card">Блоки по чертежам заказчика</h3>
+                    <p class="par__card">Эксклюзивное производство, работа по индивидуальным чертежам,  под проект заказчика.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section__noSpaceY" id="second">
+            <div>
+                <h2 class="title__section">Криогенные изотермические панели для хранения сжиженного природного газа (СПГ)</h2>
+                <ul class="list list__primal">
+                    <li class="list__item">Хранение СПГ при температуре до -167оС</li>
+                    <li class="list__item">Транспортировка СПГ</li>
+                    <li class="list__item">Перевод судов на СПГ, как топливо</li>
+                    <li class="list__item">Применение в строительстве хранилищ на суше, в прибрежной линии, напоавных сооружений, судов газовозов</li>
+                    <li class="list__item">Лучшее решение вопроса отсутствия утечек СПГ в газообразной или жидкой форме</li>
+                </ul>
+                <p class="par"><span class="text_bold">Регент Балтика</span> предлагает полный цикл автоматизированного производства панелей, которое отвечает всем современным стандартам. Для производства панелей мы осуществляем:</p>
+                <ul class="list">
+                    <li class="list__item">предпроектные работы;</li>
+                    <li class="list__item">производство оборудования HiStreamtm для переработки пенополиуритана;</li>
+                    <li class="list__item">поставка оборудлвания от мировых производителей;</li>
+                    <li class="list__item">обеспечение химическими компонентами;</li>
+                    <li class="list__item">контроль качества.</li>
+                </ul>
+            </div>
+            <div class="container_carousel">
+                <div class="fotorama" data-nav="thumbs" data-arrows="false" data-transition="crossfade" data-nav="thumbs" data-thumbmargin="20" data-thumbborderwidth="1">
+                    <img src="img/kip-sl1.jpg" alt="">
+                    <img src="img/kip-sl2.jpg" alt="">
+                    <img src="img/kip-sl3.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="hr"></div>
+            <h2 class="title__main title__main_alone">Регент Балтика осуществляет локализацию производства криогенных панелей в России.</h2>
+            <div class="hr"></div>
+        </section>
+        <section class="section bg_primal text_lt-md" id="third">
+            <h2 class="title__section title__section_sm text_center text_white text_bold">Изоляционные панели из усиленного пенополиуретана можно применять в следующих направлениях:</h2>
+            <ol class="list">
+                <li class="list__item">
+                    <span class="list__label">01</span>
+                    Железнодорожные цистерны для СПГ
+                </li>
+                <li class="list__item">
+                    <span class="list__label">02</span>
+                    Энергоэффективные  дома с применением изоляционных панелей  из усиленного ППУ
+                </li>
+            </ol>
+            <div class="cestern">
+                <img class="img" src="img/cestern.png" alt="">
+            </div>
+            <div class="">
+                <div class="row row_vcenter row_gap-md">
+                    <div class="col_4 ico">
+                        <img class="img" src="img/cost.png" alt="">
+                    </div>
+                    <div class="col_8 text_white">
+                        Снижение расходов на эксплуатацию
+                    </div>
+                </div>
+                <div class="row row_vcenter row_gap-md">
+                    <div class="col_4 ico">
+                        <img class="img" src="img/calendar.png" alt="">
+                    </div>
+                    <div class="col_8 text_white">
+                        Длительный срок хранения и перевозки сжиженного газа
+                    </div>
+                </div>
+                <div class="row row_vcenter row_gap-md">
+                    <div class="col_4 ico">
+                        <img class="img" src="img/gear.png" alt="">
+                    </div>
+                    <div class="col_8 text_white">
+                        Безопасность для окружающей среды
+                    </div>
+                </div>
+            </div>
+            <p class="par text_white">
+                Для перевозки СПГ используют различные транспортные средства: корабли, железнодорожные контейнеры, прицепы
+                для грузовиков, цистерны. 
+                <br>
+                <br>
+                Регент Балтика видит в этом потенциал для применения технологии армированного
+                в объёме пенополиуретана.</p>
+        </section>
+        <section class="section_botSm" id="fourth">
+            <div>
+                <h2 class="title__section title__main text_center">Энергоэффективные <br>дома <br>с&nbsp;применением изоляционных панелей из&nbsp;усиленного ППУ</h2>
+                <ul class="list list__primal">
+                    <li class="list__item">Быстро возводятся</li>
+                    <li class="list__item">Прочная конструкция</li>
+                    <li class="list__item">Снижение затрат на отопление</li>
+                    <li class="list__item">Изоляция от внешних факторов</li>
+                    <li class="list__item">Малая нагрузка на основание</li>
+                    <li class="list__item">Малая нагрузка на основание</li>
+                    <li class="list__item">Малая нагрузка на основание</li>
+                </ul>
+                <div class="text_bold mb_sm text_lt-md">Область применения:</div>
+                <ul class="list">
+                    <li class="list__item">Жилые дома (дачные или для постоянного проживания)</li>
+                    <li class="list__item">В строениях временного использования</li>
+                    <li class="list__item">В конструкциях функционального назначения</li>
+                </ul>
+                <div class="text_bold mb_sm text_lt-md">Эффективность модульных домов с усиленным ППУ:</div>
+                <ul class="list">
+                    <li class="list__item">Экономичные</li>
+                    <li class="list__item">Функциональные</li>
+                    <li class="list__item">Практичные</li>
+                </ul>
+            </div>
+            <div class="container_carousel">
+                <div class="fotorama" data-nav="thumbs" data-arrows="false" data-transition="crossfade" data-nav="thumbs" data-thumbmargin="20" data-thumbborderwidth="1">
+                    <img src="img/doma-sl-2.jpg" alt="">
+                    <img src="img/doma-sl-1.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section section__noSpaceY">
+            <h2 class="title__section title__main text_center">Способ применения</h2>
+            <div class="card">
+                <div class="card__header_sm">
+                    <img class="img" src="img/Sp1.jpg" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="par par_allwaysDef text_bold">
+                        В панель с усиленным ППУ интегрированы мембранные материалы и металлические силовые закладные с метизный группой.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__header_sm">
+                    <img class="img" src="img/Sp2.jpg" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="par par_allwaysDef text_bold">
+                        В панель с усиленным ППУ интегрированы мембранные материалы и металлические силовые закладные с метизный группой.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__header_sm">
+                    <img class="img" src="img/Sp3.jpg" alt="">
+                </div>
+                <div class="card__content">
+                    <p class="par par_allwaysDef text_bold">
+                        В панель с усиленным ППУ интегрированы мембранные материалы и металлические силовые закладные с метизный группой.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="fifth">
+            <h2 class="title__section title__main text_center">Новости компании</h2>
+            <div class="news">
+                <div class="news__item">
+                    <div class="news__date">23 ноября 2018</div>
+                    <a href="#" class="news__lable">Название новости</a>
+                </div>
+                <div class="news__item">
+                    <div class="news__date">23 ноября 2018</div>
+                    <a href="#" class="news__lable">Название новости</a>
+                </div>
+                <div class="news__item">
+                    <div class="news__date">23 ноября 2018</div>
+                    <a href="#" class="news__lable">Название новости</a>
+                </div>
+            </div>
+        </section>
+        <section class="section section__noSpaceY" id="sixth">
+            <h2 class="title__section title__main text_center">Контакты ООО "Регент Балтика"</h2>
+            <div class="contacts">
+                <div class="contacts__item">
+                    <div class="contacts__title">телефон</div>
+                    <div class="contacts__content">
+                        <div class="contacts__ico">
+                            <img src="img/phone.png" alt="">
+                        </div>
+                        <div class="contacts__main">
+                            <a href="#" class="contacts__link">+7 (812) 309 95 16</a>
+                            <a href="#" class="contacts__link">+7 (812) 309 95 61</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__item">
+                    <div class="contacts__title">адрес</div>
+                    <div class="contacts__content">
+                        <div class="contacts__ico">
+                            <img src="img/placeholder.png" alt="">
+                        </div>
+                        <div class="contacts__main">
+                            <p class="contacts__txt">
+                                ул. Белоостровская,17. к. 2
+                                БЦ Авантаж, оф. 101
+                                г.&nbsp;Санкт-&nbsp;Петербург
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__item">
+                    <div class="contacts__title">e-mail</div>
+                    <div class="contacts__content">
+                        <div class="contacts__ico">
+                            <img src="img/envelope.png" alt="">
+                        </div>
+                        <div class="contacts__main">
+                            <p class="contacts__txt">info@baltic-united.ru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__item">
+                    <div class="contacts__title">Следуйте за нами</div>
+                    <div class="contacts__content">
+                        <div class="contacts__main">
+                            <a href="#" class="contacts__social"><img src="img/tw.png" alt=""></a>
+                            <a href="#" class="contacts__social"><img src="img/fb.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__top"></div>
+        <div class="footer__map" id="map"></div>
+        <div class="footer__address">
+            © Baltic United Company 2014 All Rights
+        </div>
+    </footer>
+    
 
 
-
-    Empty project!
-
-
-
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
