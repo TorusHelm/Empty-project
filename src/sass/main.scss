@@ -1036,26 +1036,51 @@
         width: 8px;
         border-radius: 100%;
         background-color: $white;
+        transition: all 0.3s ease-in-out;
         @at-root [line='top'] &{
+            &:nth-child(1){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
         }
         @at-root [line='1'] &{
             background-color: $dot;
+            &:nth-child(2){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
         }
         @at-root [line='2'] &{
             background-color: $dot;
+            &:nth-child(3){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
         }
         @at-root [line='3'] &{
+            &:nth-child(4){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
         }
         @at-root [line='4'] &{
+            &:nth-child(5){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
             background-color: $dot;
         }
         @at-root [line='5'] &{
+            &:nth-child(6){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
             background-color: $dot;
         }
         @at-root [line='6'] &{
+            &:nth-child(7){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
             background-color: $dot;
         }
         @at-root [line='bot'] &{
+            &:nth-child(8){
+                box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+            }
         }
     }
     @include respond-to(desktop){

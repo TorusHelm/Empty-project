@@ -1419,19 +1419,45 @@ ul, ol {
     height: 8px;
     width: 8px;
     border-radius: 100%;
-    background-color: #ffffff; }
+    background-color: #ffffff;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
     .dots__item:not(:first-child) {
       margin-top: 10px; }
+    [line='top'] .dots__item:nth-child(1) {
+      -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+      box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
     [line='1'] .dots__item {
       background-color: #034f97; }
+      [line='1'] .dots__item:nth-child(2) {
+        -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+        box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
     [line='2'] .dots__item {
       background-color: #034f97; }
+      [line='2'] .dots__item:nth-child(3) {
+        -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+        box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
+    [line='3'] .dots__item:nth-child(4) {
+      -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+      box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
     [line='4'] .dots__item {
       background-color: #034f97; }
+      [line='4'] .dots__item:nth-child(5) {
+        -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+        box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
     [line='5'] .dots__item {
       background-color: #034f97; }
+      [line='5'] .dots__item:nth-child(6) {
+        -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+        box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
     [line='6'] .dots__item {
       background-color: #034f97; }
+      [line='6'] .dots__item:nth-child(7) {
+        -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+        box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
+    [line='bot'] .dots__item:nth-child(8) {
+      -webkit-box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75);
+      box-shadow: 0 0 7px 1px rgba(84, 156, 221, 0.75); }
   @media only screen and (min-width: 1200px) {
     .dots {
       display: -webkit-box;
