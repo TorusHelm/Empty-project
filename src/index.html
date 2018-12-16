@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="body" menuState="close" id="main" positionTop>
+<body class="body" menuState="close" id="main" positionTop lang="ru" line>
     <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
@@ -26,9 +26,22 @@
     <div class="header__empty"></div>
     <header class="header header_fixed">
         <div class="wrapper">
+            <div class="dots">
+                <div class="dots__item"></div>
+                <div class="dots__item"></div> 
+                <div class="dots__item"></div>
+                <div class="dots__item"></div>
+                <div class="dots__item"></div>
+                <div class="dots__item"></div>
+                <div class="dots__item"></div>
+                <div class="dots__line"></div>
+            </div>
             <div class="header__number">+7 (812) <span class="text_bold">309 95 16</span></div>
-            <div class="header__lang">RU</div>
-            <div class="header__arrow"><img src="img/arrow.png" alt=""></div>
+            <div class="header__lang js_langChange">
+                <span class="lang__item" id="ru">RU</span>
+                <span class="lang__item" id="eu">EU</span>
+            </div>
+            <div class="header__arrow js_langChange"><img src="img/arrow.png" alt=""></div>
             <div class="toogler" id="js_menuBtn">
                 <span class="toogler__main"></span>
             </div>
@@ -51,8 +64,8 @@
         </div>
     </header>
     <main class="main">
-        <section class="section__main">
-            <div class="wrapper wrapper_flex">
+        <section class="section__main" id="topSide" js_section>
+            <div class="wrapper wrapper-tb_flex">
                 <div class="banner bg_primal">
                     <h1 class="title__main"><img class="logo" src="img/logo.png" alt="">ООО "Регент Балтика"</h1>
                     <h2 class="subtitle">Интеграция технологий и производства</h2>
@@ -69,10 +82,10 @@
                 <div class="banner_bugfix"></div>
             </div>
         </section>
-        <section class="section text_center bg-tb_gray" id="first">
+        <section class="section text_center bg-tb_gray" id="first" js_section>
             <div class="wrapper">
                 <h2 class="title__section title__section_big">Производство ППУ</h2>
-                <div class="flex">
+                <div class="flex flex_wrap chairs">
                     <div class="card">
                         <div class="card__header">
                             <img class="img" src="img/ppp1.png" alt="">
@@ -94,10 +107,10 @@
                 </div>
             </div>
         </section>
-        <section class="section section__noSpaceY bg-tb_gray" id="second">
-            <div class="wrapper">
-                <div>
-                    <h2 class="title__section">Криогенные изотермические панели для хранения сжиженного природного газа (СПГ)</h2>
+        <section class="section section__noSpaceY bg-tb_gray" id="second" js_section>
+            <div class="wrapper d-desk-flex">
+                <div class="col-desk-6 pr-desk-md">
+                    <h2 class="title__section">Криогенные изотермические панели&nbsp;для хранения сжиженного природного газа (СПГ)</h2>
                     <ul class="list list__primal">
                         <li class="list__item">Хранение СПГ при температуре до -167оС</li>
                         <li class="list__item">Транспортировка СПГ</li>
@@ -114,7 +127,7 @@
                         <li class="list__item">контроль качества.</li>
                     </ul>
                 </div>
-                <div class="container_carousel">
+                <div class="container_carousel col-desk-6 pl-desk-md">
                     <div class="fotorama" data-nav="thumbs" data-arrows="false" data-transition="crossfade" data-nav="thumbs" data-thumbmargin="20" data-thumbborderwidth="1">
                         <img src="img/kip-sl1.jpg" alt="">
                         <img src="img/kip-sl2.jpg" alt="">
@@ -123,22 +136,22 @@
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section bg-desk_gray">
             <div class="wrapper">
                 <div class="hr"></div>
                 <h2 class="title__main title__main_alone">Регент Балтика осуществляет локализацию производства <br class="d-desk-block">криогенных панелей в России.</h2>
                 <div class="hr"></div>
             </div>
         </section>
-        <section class="section bg_primal text_lt-md" id="third">
-            <div class="wrapper">
-                <h2 class="title__section title__section_sm text_center text_white text_bold">Изоляционные панели из усиленного пенополиуретана можно применять в следующих направлениях:</h2>
-                <ol class="list">
-                    <li class="list__item">
+        <section class="section bg_primal text_lt-md" id="third" js_section>
+            <div class="wrapper wrapper-tb_flex">
+                <h2 class="title__section text_center text_white text_bold text-desk_left">Изоляционные панели из усиленного пенополиуретана можно применять в следующих направлениях:</h2>
+                <ol class="list d-desk-flex">
+                    <li class="list__item col-desk-6">
                         <span class="list__label">01</span>
                         Железнодорожные цистерны для СПГ
                     </li>
-                    <li class="list__item">
+                    <li class="list__item col-desk-6">
                         <span class="list__label">02</span>
                         Энергоэффективные  дома с применением изоляционных панелей  из усиленного ППУ
                     </li>
@@ -146,7 +159,7 @@
                 <div class="cestern">
                     <img class="img" src="img/cestern.png" alt="">
                 </div>
-                <div class="icons">
+                <div class="icons col-desk-6 pl-desk-md">
                     <div class="row row_vcenter row_gap-md">
                         <div class="col_4 ico">
                             <img class="img" src="img/cost.png" alt="">
@@ -172,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="par text_white">
+                <p class="par text_white col-desk-6 pr-desk-md">
                     Для перевозки СПГ используют различные транспортные средства: корабли, железнодорожные контейнеры, прицепы
                     для грузовиков, цистерны. 
                     <br>
@@ -182,10 +195,10 @@
                 </p>
             </div>
         </section>
-        <section class="section_botSm" id="fourth">
-            <div class="wrapper">
-                <div>
-                    <h2 class="title__section text_center">Энергоэффективные <br class="d-tb-none">дома <br>с&nbsp;применением изоляционных панелей&nbsp;из&nbsp;усиленного ППУ</h2>
+        <section class="section_botSm" id="fourth" js_section>
+            <div class="wrapper d-desk-flex">
+                <div class="col-desk-6 pr-desk-md">
+                    <h2 class="title__section text_center text-desk_left">Энергоэффективные <br class="d-tb-none">дома <br>с&nbsp;применением изоляционных панелей&nbsp;из&nbsp;усиленного ППУ</h2>
                     <ul class="list list__primal">
                         <li class="list__item">Быстро возводятся</li>
                         <li class="list__item">Прочная конструкция</li>
@@ -208,7 +221,7 @@
                         <li class="list__item">Практичные</li>
                     </ul>
                 </div>
-                <div class="container_carousel">
+                <div class="container_carousel col-desk-6 pl-desk-md">
                     <div class="fotorama" data-nav="thumbs" data-arrows="false" data-transition="crossfade" data-nav="thumbs" data-thumbmargin="20" data-thumbborderwidth="1">
                         <img src="img/doma-sl-2.jpg" alt="">
                         <img src="img/doma-sl-1.jpg" alt="">
@@ -218,8 +231,8 @@
         </section>
         <section class="section section__noSpaceY">
             <div class="wrapper">
-                <h2 class="title__section title__main text_center text_tb-big">Способ применения</h2>
-                <div class="flex">
+                <h2 class="title__section title__main text_center text_tb-big text-desk_left">Способ применения</h2>
+                <div class="flex flex_noWrap">
                     <div class="card">
                         <div class="card__header_sm">
                             <img class="img" src="img/Sp1.jpg" alt="">
@@ -253,9 +266,9 @@
                 </div>
             </div>
         </section>
-        <section class="section news-block" id="fifth">
+        <section class="section news-block" id="fifth" js_section>
             <div class="wrapper">
-                <h2 class="title__section title__main text_center">Новости компании</h2>
+                <h2 class="title__section title__main text_center text-desk_left">Новости компании</h2>
                 <div class="news">
                     <div class="news__item news__item_main">
                         <div class="news__date">23 ноября 2018</div>
@@ -277,7 +290,7 @@
                 </div>
             </div>
         </section>
-        <section class="section section__noSpaceY" id="sixth">
+        <section class="section section__noSpaceY" id="sixth" js_section>
             <div class="wrapper">
                 <h2 class="title__section title__main text_center">Контакты ООО "Регент Балтика"</h2>
                 <div class="contacts">
@@ -332,7 +345,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id='bot'>
         <div class="wrapper">
             <div class="footer__top"></div>
             <div class="footer__map" id="map"></div>

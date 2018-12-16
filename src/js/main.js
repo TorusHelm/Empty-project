@@ -17,7 +17,35 @@ $(document).ready(function(){
         }, 800);
         return false;
     });
+    langState('#ru', 'ru');
+    langState('#eu', 'eu');
+    $('.js_langChange').on('click', function(){
+        $('.header__lang').toggleClass('header__lang_show');
+        $('.header__arrow').toggleClass('header__arrow_show');
+    });
 });
+$(document).mouseup(function (e) {
+    var container = $(".js_langChange");
+    if (container.has(e.target).length === 0){
+        $('.js_langChange').removeClass('header__lang_show');
+        $('.header__arrow').removeClass('header__arrow_show');
+    }
+});
+
+function langState(lang, langState){
+    $(lang).on('click', function(){
+        $('.body').attr('lang', langState);
+    });
+}
+
+function ChangeDots(elem, state){
+    var wHeight = $(window).innerHeight(),
+        wPosition = $(window).scrollTop(),
+        elemPosition = $(elem).offset().top;
+    if((wPosition + wHeight) >= elemPosition){
+        $('.body').attr('line', state);
+    }
+}
 
 $(window).on('scroll', function(){
     if($(window).scrollTop() === 0){
@@ -25,6 +53,15 @@ $(window).on('scroll', function(){
     } else {
         $('[positionTop]').attr('positionTop', 'false');
     }
+
+    ChangeDots('#topSide', 'top');
+    ChangeDots('#first', '1');
+    ChangeDots('#second', '2');
+    ChangeDots('#third', '3');
+    ChangeDots('#fourth', '4');
+    ChangeDots('#fifth', '5');
+    ChangeDots('#sixth', '6');
+    ChangeDots('#bot', 'bot');
 });
 
 ymaps.ready(function () {

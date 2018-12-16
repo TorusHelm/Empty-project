@@ -11,6 +11,16 @@
         overflow: hidden;
     }
 }
+[lang='ru']{
+    #ru{
+        order: -1;
+    }
+}
+[lang='eu']{
+    #eu{
+        order: -1;
+    }
+}
 .header{
     height: 50px;
     background-color: $color-white;
@@ -54,8 +64,12 @@
         }
     }
     &__lang{
+        display: flex;
+        flex-direction: column;
         margin-left: auto;
         font-size: $fz-sm;
+        height: 21px;
+        overflow: hidden;
         @include respond-to(tablet){
             font-size: $fz-def;
             color: $white;
@@ -67,11 +81,16 @@
         @include respond-to(desktopPlus){
             position: absolute;
             left: 60px;
+            right: initial;
+        }
+        &_show{
+            overflow: visible;
         }
     }
     &__arrow{
         padding-right: 15px;
         padding-left: 15px;
+        transition: all 0.3s;
         & img {
             filter: brightness(0);
             @include respond-to(tablet){
@@ -85,6 +104,19 @@
         @include respond-to(desktopPlus){
             position: absolute;
             left: 80px;
+            right: initial;
+        }
+        &_show{
+            transform: scaleY(-1);
+        }
+    }
+}
+.lang{
+    &__item{
+        display: block;
+        background-color: $white;
+        @include respond-to(tablet){
+            background-color: $logo;
         }
     }
 }
@@ -265,6 +297,7 @@
         }
         @include respond-to(desktop){
             text-align: left;
+            margin-bottom: 45px;
         }
         @at-root .bg_primal &{
             margin-bottom: 60px;
@@ -342,6 +375,9 @@
         margin-top: 40px;
         margin-bottom: 0px;
         font-size: $fz-lg;
+    }
+    @include respond-to(desktop){
+        margin-top: 0px;
     }
 }
 .btn{
@@ -448,10 +484,12 @@
     margin-right: auto;
     position: relative;
     width: 100%;
-    &_flex{
-        @include respond-to(desktop){
-            display: flex;
-            flex-wrap: wrap;
+    &-tb{
+        &_flex{
+            @include respond-to(tablet){
+                display: flex;
+                flex-wrap: wrap;
+            }
         }
     }
     @at-root .header &{
@@ -493,6 +531,9 @@
             @include respond-to(tablet){
                 font-size: $fz-sm;
             }
+            @include respond-to(desktop){
+                font-size: $fz-lg;
+            }
         }
         &:first-child{
             padding-left: 0px;
@@ -501,6 +542,12 @@
             padding-right: 0px;
         }
 
+    }
+    @at-root .chairs &{
+        flex: 0 0 100%;
+        @include respond-to(desktop){
+            flex: 0 0 50%;
+        }
     }
 }
 .list{
@@ -559,6 +606,9 @@
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 0;
+        }
+        @include respond-to(desktop){
+            max-width: none;
         }
         &__item{
             color: $white;
@@ -651,33 +701,23 @@
         align-items: center;
     }
 }
-.col{
-    &_4{
-        flex: 0 0 33.33333%;
-        max-width: 33.33333%;
-    }
-    &_8{
-        flex: 0 0 66.66666%;
-        max-width: 66.66666%;
-    }
-}
 .ico{
     padding: 0 30px 0 10px;
-    max-width: 120px;
+    max-width: 120px !important;
 }
 .news{
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
-        @include respond-to(tablet){
-            display: flex;
-            text-align: initial;
-        }
+    @include respond-to(tablet){
+        display: flex;
+        text-align: initial;
+    }
     &__item{
         margin-bottom: 35px;
         position: relative;
         @include respond-to(tablet){
-            max-width: 280px;
+            // max-width: 280px;
             margin-bottom: 30px;
             &:last-child{
                 margin-bottom: 0px;
@@ -693,9 +733,20 @@
                 background-color: $shadow-box;
             }
         }
+        @include respond-to(desktop){
+            max-width: 559px;
+            margin-bottom: 75px;
+            &::before{
+                top: 154px;
+                right: -30px;
+                width: 200px;
+                height: 166px;
+            }
+        }
         &_main{
             @include respond-to(tablet){
-                max-width: 350px;
+                // max-width: 350px;
+                flex: 0 0 50%;
                 &::before{
                     content: '';
                     position: absolute;
@@ -707,11 +758,26 @@
                     background-color: $shadow-box;
                 }
             }
+            @include respond-to(desktop){
+                max-width: 700px;
+                &::before{
+                    top: 326px;
+                    right: -30px;
+                    width: 305px;
+                    height: 253px;
+                }
+                & img{
+                    height: 100%;
+                    width: auto;
+                }
+            }
         }
     }
     &__aside{
         @include respond-to(tablet){
-            display: inline-block;
+            display: block;
+            flex: 0 0 50%;
+            padding-left: 100px;
         }
     }
     &__date{
@@ -758,13 +824,19 @@
         position: relative;
         @include respond-to(tablet){
             display: block;
-            height: 146px;
+            max-height: 146px;
+        }
+        @include respond-to(desktop){
+            max-height: 289px;
         }
         &_main{
             display: none;
             @include respond-to(tablet){
                 display: block;
-                height: 275px;
+                max-height: 275px;
+            }
+            @include respond-to(desktop){
+                max-height: 550px;
             }
         }
     }
@@ -784,6 +856,9 @@
         flex: 0 0 100%;
         @include respond-to(tablet){
             flex: 0 0 50%;
+        }
+        @include respond-to(desktop){
+            flex: 0 0 25%;
         }
     }
     &__title{
@@ -850,6 +925,8 @@
         @include respond-to(tablet){
             padding: 0 50px 80px;
             height: 590px;
+            font-size: $fz-normal;
+            text-align: center;
         }
     }
     &__map{
@@ -876,7 +953,112 @@
         display: flex;
         flex-direction: row;
     }
+    &_noWrap{
+        @include respond-to(desktop){
+            flex-wrap: nowrap;
+        }
+    }
+    &_wrap{
+        @include respond-to(tablet){
+            flex-wrap: wrap;
+        }
+    }
 }
 
 
 @import "tools";
+
+.fotorama__thumb-border, .fotorama__nav--thumbs .fotorama__nav__frame, .fotorama__thumb, .fotorama__thumb img {
+    @include respond-to(tablet){
+        height: 175px !important;
+        width: 175px !important;
+        left: 0 !important;
+    }
+}
+.fotorama__thumb-border {
+    @include respond-to(tablet){
+        display: none !important;
+    }
+}
+.test{
+    transition: all 1s;
+    transition: rotate(180deg);
+}
+.dots{
+    position: fixed;
+    transform: translateX(-50px);
+    top: 230px;
+    display: none;
+    flex-direction: column;
+    &__line{
+        width: 100vw;
+        height: 2px;
+        background-color: $white;
+        position: absolute;
+        right: 8px;
+        margin-top: 3px;
+        top: 0px;
+        @at-root [line='top'] &{
+            top: 0px;
+        }
+        @at-root [line='1'] &{
+            top: 18px;
+            background-color: $dot;
+        }
+        @at-root [line='2'] &{
+            top: 36px;
+            background-color: $dot;
+        }
+        @at-root [line='3'] &{
+            top: 54px;
+        }
+        @at-root [line='4'] &{
+            top: 72px;
+            background-color: $dot;
+        }
+        @at-root [line='5'] &{
+            top: 90px;
+            background-color: $dot;
+        }
+        @at-root [line='6'] &{
+            top: 108px;
+            background-color: $dot;
+        }
+        @at-root [line='bot'] &{
+            top: 108px;
+        }
+    }
+    &__item{
+        &:not(:first-child){
+            margin-top: 10px;
+        }
+        height: 8px;
+        width: 8px;
+        border-radius: 100%;
+        background-color: $white;
+        @at-root [line='top'] &{
+        }
+        @at-root [line='1'] &{
+            background-color: $dot;
+        }
+        @at-root [line='2'] &{
+            background-color: $dot;
+        }
+        @at-root [line='3'] &{
+        }
+        @at-root [line='4'] &{
+            background-color: $dot;
+        }
+        @at-root [line='5'] &{
+            background-color: $dot;
+        }
+        @at-root [line='6'] &{
+            background-color: $dot;
+        }
+        @at-root [line='bot'] &{
+        }
+    }
+    @include respond-to(desktop){
+        display: flex;
+    }
+}

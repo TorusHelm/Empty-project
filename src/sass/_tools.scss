@@ -11,6 +11,13 @@
     &_lt-md{
         letter-spacing: 0.5px;
     }
+    &-desk{
+        &_left{
+            @include respond-to(desktop){
+                text-align: left;
+            }
+        }
+    }
 }
 .fz{
     &_normal{
@@ -35,11 +42,32 @@
             padding-right: 20px;
         }
     }
+    &l{
+        &-desk{
+            &-md{
+                padding-left: 25px;
+            }
+        }
+    }
+    &r{
+        &-desk{
+            &-md{
+                padding-right: 25px;
+            }
+        }
+    }
 }
 .bg{
     &-tb{
         &_gray{
             @include respond-to(tablet){
+                background-color: $gray;
+            }
+        }
+    }
+    &-desk{
+        &_gray{
+            @include respond-to(desktop){
                 background-color: $gray;
             }
         }
@@ -59,12 +87,36 @@
                 display: block;
             }
         }
+        &-flex{
+            @include respond-to(desktop){
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
     }
 }
 .order{
     &-tb{
         &-1{
             order: -1;
+        }
+    }
+}
+.col{
+    &_4{
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+    &_8{
+        flex: 0 0 66.66666%;
+        max-width: 66.66666%;
+    }
+    &-desk{
+        &-6{
+            @include respond-to(desktop){
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
         }
     }
 }
