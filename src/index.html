@@ -18,12 +18,28 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="body" menuState="close" id="main" positionTop lang="ru" line>
+<body class="body" menuState="close" id="main" positionTop lang="ru" line popupState="close">
     <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
     <div class="header__empty"></div>
+    <div class="popup">
+        <div class="popup__wrapper">
+            <div class="popup__wrapClose" js_popupClose>
+                <div class="popup__close"></div>
+            </div>
+            <div class="popup__title">Отправить заявку</div>
+            <form action="">
+                <input type="text" class="input" placeholder="Имя" minlength="3" required>
+                <input type="email" class="input" placeholder="E-mail*" required>
+                <input type="phone" class="input" placeholder="Номер телефона*" id="phone" required>
+                <textarea type="textarea" maxlength="1000" class="input input_text-area" placeholder="Комментарий"></textarea>
+                <button type="submit" class="btn popup__btn">Отправить</button>
+            </form>
+            <span class="popup__policy">Нажимая на кнопку «Отправить», вы подтверждаете, что согласны и ознакомлены с <a href="#" class="menu__policy">политикой конфиденциальности.</a></span>
+        </div>
+    </div>
     <header class="header header_fixed">
         <div class="wrapper">
             <div class="dots">
@@ -36,7 +52,7 @@
                 <div class="dots__item"></div>
                 <div class="dots__line"></div>
             </div>
-            <div class="header__number">+7 (812) <span class="text_bold">309 95 16</span></div>
+            <a href="tel:+78123099516" class="header__number">+7 (812) <span class="text_bold">309 95 16</span></a>
             <div class="header__lang js_langChange">
                 <span class="lang__item" id="ru">RU</span>
                 <span class="lang__item" id="eu">EU</span>
@@ -47,18 +63,31 @@
             </div>
             <div class="menu">
                 <div class="menu__wrapper">
-                    <a href="#main" class="js_anchor menu__title">
-                        Регент Балтика
-                    </a>
-                    <ul class="list">
-                        <li class="list__item"><a class="js_anchor list__link" href="#first">Производство ППУ</a></li>
-                        <li class="list__item"><a class="js_anchor list__link" href="#second">Изотермические панели</a></li>
-                        <li class="list__item"><a class="js_anchor list__link" href="#third">Применение</a></li>
-                        <li class="list__item"><a class="js_anchor list__link" href="#fourth">Энергоэффективные  дома</a></li>
-                        <li class="list__item"><a class="js_anchor list__link" href="#fifth">Новости</a></li>
-                        <li class="list__item"><a class="js_anchor list__link" href="#sixth">Контакты</a></li>
-                    </ul>
-                    <a href="#" class="menu__policy">Политика конфиденциальности</a>
+                    <div class="menu__aside_desk d-none d-desk-flex text-desk_left">
+                        <a href="#main" class="js_anchor menu__title">
+                            Регент Балтика
+                        </a>
+                        <a href="#" class="menu__policy">Политика конфиденциальности</a>
+                        
+                    </div>
+                    <div class="menu__aside_desk text-desk_right">
+                        <a href="#main" class="js_anchor menu__title d-desk-none">
+                            Регент Балтика
+                        </a>
+                        <ul class="list">
+                            <li class="list__item"><a class="js_anchor list__link" href="#first">Производство ППУ</a></li>
+                            <li class="list__item"><a class="js_anchor list__link" href="#second">Изотермические панели</a></li>
+                            <li class="list__item"><a class="js_anchor list__link" href="#third">Применение</a></li>
+                            <li class="list__item"><a class="js_anchor list__link" href="#fourth">Энергоэффективные  дома</a></li>
+                            <li class="list__item"><a class="js_anchor list__link" href="#fifth">Новости</a></li>
+                            <li class="list__item"><a class="js_anchor list__link" href="#sixth">Контакты</a></li>
+                        </ul>
+                        <a href="tel:+78123099516" class="header__number d-none d-desk-block">+7 (812) <span class="text_bold">309 95 16</span></a>
+                        <a href="#" class="menu__policy d-desk-none">Политика конфиденциальности</a>
+                        <span class="menu__address d-none d-desk-block">
+                            г. Санкт-Петербург <br>ул. Белоостровская,17. к. 2
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,10 +96,10 @@
         <section class="section__main" id="topSide" js_section>
             <div class="wrapper wrapper-tb_flex">
                 <div class="banner bg_primal">
-                    <h1 class="title__main"><img class="logo" src="img/logo.png" alt="">ООО "Регент Балтика"</h1>
+                    <h1 class="title__main"><img class="logo d-none d-tb-inlineblock" src="img/logo.png" alt="">ООО "Регент Балтика"</h1>
                     <h2 class="subtitle">Интеграция технологий и производства</h2>
                     <p class="par">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <a href="javascript: void(0);" class="btn">скачать презентацию</a>
+                    <a href="#" class="btn" js_runPopup>скачать презентацию</a>
                     <div class="banner__bg_desk"></div>
                 </div>
                 <div class="img-container">
@@ -273,18 +302,18 @@
                     <div class="news__item news__item_main">
                         <div class="news__date">23 ноября 2018</div>
                         <div class="news__img news__img_main"><img class="img" src="img/news.png" alt=""></div>
-                        <a href="#" class="news__lable">Название новости</a>
+                        <a href="#" class="news__lable" inNewsState>Название новости</a>
                     </div>
                     <div class="news__aside">
                         <div class="news__item">
                             <div class="news__date">23 ноября 2018</div>
                             <div class="news__img"><img class="img" src="img/news.png" alt=""></div>
-                            <a href="#" class="news__lable">Название новости</a>
+                            <a href="#" class="news__lable" inNewsState>Название новости</a>
                         </div>
                         <div class="news__item">
                             <div class="news__date">23 ноября 2018</div>
                             <div class="news__img"><img class="img" src="img/news.png" alt=""></div>
-                            <a href="#" class="news__lable">Название новости</a>
+                            <a href="#" class="news__lable" inNewsState>Название новости</a>
                         </div>
                     </div>
                 </div>
@@ -314,8 +343,8 @@
                             </div>
                             <div class="contacts__main">
                                 <p class="contacts__txt">
-                                    ул. Белоостровская,17. к. 2
-                                    БЦ&nbsp;Авантаж, оф. 101
+                                    ул. Белоостровская,17. к. 2<br>
+                                    БЦ&nbsp;Авантаж, оф. 101<br>
                                     г.&nbsp;Санкт-&nbsp;Петербург
                                 </p>
                             </div>
@@ -356,12 +385,35 @@
                 </div>
             </div>
     </footer>
-    
+    <div class="darkness">
+        <div class="inNews" id="inNews1">
+            <div class="popup__wrapClose" inNewsState>
+                <div class="popup__close"></div>
+            </div>
+            <div class="inNews__date">25 ноября 2018</div>
+            <div class="inNews__content">
+                <div class="inNews__title">Название новости</div>
+                <div class="inNews__wrapper">
+                    <p class="inNews__txt">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    </p>
+                        <div class="inNews__images">
+                            <img class="inNews__img" src="img/kip-sl3.jpg" alt="">
+                            <img class="inNews__img" src="img/kip-sl1.jpg" alt="">
+                            <img class="inNews__img" src="img/doma-sl-1.jpg" alt="">
+                        </div>
+                    <p class="inNews__txt">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>    
 
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>

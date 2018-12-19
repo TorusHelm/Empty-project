@@ -17,6 +17,11 @@
                 text-align: left;
             }
         }
+        &_right{
+            @include respond-to(desktop){
+                text-align: right;
+            }
+        }
     }
 }
 .fz{
@@ -45,14 +50,18 @@
     &l{
         &-desk{
             &-md{
-                padding-left: 25px;
+                @include respond-to(desktop){
+                    padding-left: 25px;
+                }
             }
         }
     }
     &r{
         &-desk{
             &-md{
-                padding-right: 25px;
+                @include respond-to(desktop){
+                    padding-right: 25px;
+                }
             }
         }
     }
@@ -74,14 +83,33 @@
     }
 }
 .d{
+    &-none{
+        display: none;
+    }
+    &-flex{
+        display: flex;
+    }
+    &-block{
+        display: block;
+    }
     &-tb{
         &-none{
             @include respond-to(tablet){
                 display: none;
             }
         }
+        &-inlineblock{
+            @include respond-to(tablet){
+                display: inline-block;
+            }
+        }
     }
     &-desk{
+        &-none{
+            @include respond-to(desktop){
+                display: none;
+            }
+        }
         &-block{
             @include respond-to(desktop){
                 display: block;
@@ -118,5 +146,10 @@
                 max-width: 50%;
             }
         }
+    }
+}
+.overflow{
+    &-hidden{
+        overflow: hidden;
     }
 }
