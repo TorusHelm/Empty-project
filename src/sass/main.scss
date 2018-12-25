@@ -1114,10 +1114,11 @@
 .contacts{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     @include respond-to(tablet){
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-bottom: 70px;
         padding-top: 45px;
     }
@@ -1125,7 +1126,7 @@
         margin-bottom: 45px;
         flex: 0 0 100%;
         @include respond-to(tablet){
-            flex: 0 0 50%;
+            flex: 0 0 auto;
         }
         @include respond-to(desktop){
             flex: 0 0 25%;
@@ -1169,6 +1170,10 @@
     &__main{
         flex: 0 1 auto;
         font-size: $fz-normal;
+        text-align: center;
+        @include respond-to(tablet){
+            text-align: left;
+        }
     }
     &__ico{
         flex: 0 0 auto;
