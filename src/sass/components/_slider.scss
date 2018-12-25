@@ -1,0 +1,92 @@
+.slider{
+    display: flex;
+    flex-direction: column;
+
+    &__img{
+        margin-bottom: 16px;
+        height: auto;
+        width: 100%;
+    }
+
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__caption{
+        color: #9ba9ad;
+        font-size: 14px;
+        line-height: 1.29;
+    }
+
+    &__nav{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    &__pag{
+        display: flex;
+        padding: 0 13px;
+
+        &_cur{
+            font-size: 16px;
+            color: #051f28;
+            line-height: 1.5;
+            font-family: $ff-mid;
+            padding-right: .5em;
+        }
+
+        &_all{
+            color: rgba(5,31,40,.4);
+            position: relative;
+            padding-left: .7em;
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: $ff-mid;
+
+            &:before{
+                content: '/';
+                color: inherit;
+                font-size: 16px;
+                position: absolute;
+                line-height: 1.5;
+                left: 0;
+                top:0;
+                font-family: inherit;
+            }
+
+        }
+    }
+
+    &__arrow{
+        cursor: pointer;
+        display: flex;
+
+        &:hover{
+            & .slider__arrow_ico{
+                fill: $color-hover;
+                width: 17px;
+                margin-left: -3px;
+            }
+        }
+
+        &_ico{
+            width: 14px;
+            height: 8px;
+            fill-rule: evenodd;
+            fill: $color-main;
+            transition: all ease .3s;
+
+            @at-root .slider__arrow_next &{
+               transform: rotate(180deg);
+
+                &:hover{
+                    margin-left: 0;
+                    margin-right: -3px;
+                }
+            }
+        }
+    }
+}

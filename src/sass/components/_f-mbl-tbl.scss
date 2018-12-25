@@ -1,0 +1,54 @@
+.f-mbl-tbl{
+    display: none;
+    margin-top: 16px;
+    margin-left: -32px;
+    margin-right: -32px;
+    width: calc(100% + 64px);
+
+    @include respondTo(mobile){
+        display: block;
+    }
+
+    @include respondTo(small){
+        margin-left: -24px;
+        margin-right: -24px;
+        width: calc(100% + 48px);
+    }
+
+    &__col{
+        padding: 24px 32px;
+        border-bottom: 1px solid $color-border;
+
+        @include respondTo(small){
+            padding: 24px;
+        }
+
+        &_last{
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+
+    &__row{
+        padding-bottom: 16px;
+
+        &:last-of-type{
+            padding-bottom: 0;
+        }
+    }
+
+    &__lbl{
+        font-size: $fz-xs;
+        line-height: 1.5;
+        color: $color-accident;
+        margin-bottom: 4px;
+    }
+
+    &__data{
+        font-size: 16px;
+        line-height: 1.25;
+        color: $color-txt;
+        position: relative;
+    }
+}

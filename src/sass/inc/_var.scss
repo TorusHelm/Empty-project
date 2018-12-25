@@ -1,0 +1,39 @@
+//fonts
+$ff-base: 'dinpro-regular', sans-serif;
+$ff-mid: 'dinpro-meduim', sans-serif;
+$ff-bold: 'dinpro-bold', sans-serif;
+
+//colors
+$color-g-green: #8bc540;
+$color-g-darkgreen: #7aac38;
+
+$color-txt: #051F28;
+$color-txt-sec: rgba(#051F28,.5);
+$color-main: #072833;
+$color-accident: #677B82;
+$color-hover: $color-g-green;
+$color-white: #fff;
+$color-border: #e6e6e6;
+$color-gray: #fbfbfb;
+$color-red: #ff0000;
+$color-secondary: #596a72;
+$btn-fill: $color-g-green;
+$btn-fill-hovered: $color-g-darkgreen;
+$list-border: #d6d6d6;
+
+//font-size
+$fz-xxl: 56px;
+$fz-big: 32px;
+$fz-mid: 24px;
+$fz-point: 21px;
+$fz-def: 18px;
+$fz-sm: 14px;
+$fz-xs: 12px;
+
+//grid
+$col: 64px;
+$gap-big: 116px;
+$gap-xl: 96px;
+$gap-lg: 80px;
+$gap-md: 64px;
+$gap: 40px;

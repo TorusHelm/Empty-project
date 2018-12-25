@@ -1,0 +1,330 @@
+//News
+.news{
+    display: flex;
+    flex-direction: column;
+
+    &__bord{
+        border: 2px solid $color-border;
+        border-radius: 2px;
+        max-height: 500px;
+    }
+    &__arrow{
+        border-radius: 2px;
+        padding: 0px 24px 0px 16px;
+        text-decoration: none;
+        color: $color-accident;
+        font-size: $fz-def;
+        line-height: 1;
+        transition: border-color ease .3s;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0rem 1rem .25rem 0;
+
+        display: flex;
+        align-items: center;
+        position: relative;
+        opacity: 0;
+        margin-left: auto;
+        transition: opacity ease .3s;
+
+        @include respondTo(tablet){
+            opacity: 1;
+            font-size: $fz-sm;
+        }
+        @include respondTo(mobile){
+            font-size: $fz-xs;
+        }
+    }
+    &__ico{
+        transition: all ease .3s;
+        opacity: 0.6;
+        max-height: 20px;
+    }
+    &:hover{
+        .news{
+            &__arrow{
+                opacity: 1;
+            }
+        }
+    }
+    @include respondTo(tablet){
+        flex-direction: row;
+    }
+
+    &__col{
+        @include respondTo(tablet){
+            flex: 0 0 50%;
+        }
+
+        @include respondTo(mobile){
+            flex: 0 0 100%;
+        }
+    }
+
+    &__header{
+        flex: 0 0 auto;
+        padding: 40px 40px 0;
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+
+        @include respondTo(small){
+            padding: 40px 24px 0;
+        }
+
+        @at-root .news_short &{
+            padding: 0 20px 0 0;
+            align-items: flex-start;
+            justify-content: center;
+
+            @include respondTo(mobile){
+                padding: 0;
+            }
+        }
+
+        @at-root .news-sidebar &{
+            padding: 0 0 8px;
+        }
+    }
+
+    &__body{
+        padding: 16px 40px 40px;
+
+        @include respondTo(tablet){
+            padding-right: 0;
+        }
+
+        @include respondTo(small){
+            padding: 16px 24px 40px;
+        }
+
+        @at-root .news_short &{
+            padding: 15px 0 0;
+            flex-grow: 1;
+
+            @include respondTo(mobile){
+                padding: 0;
+                width: 100%;
+            }
+        }
+
+        @at-root .news-sidebar &{
+            padding: 0;
+        }
+    }
+    &__year {
+        display: block;
+        font-size: 0.7rem;
+        color: $color-secondary;
+    }
+    &__img{
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 1;
+        overflow: hidden;
+
+        @include respondTo(mobile){
+            display: none;
+        }
+    }
+
+    &__date{
+        font-size: $fz-sm;
+        line-height: 1.29;
+        color: $color-accident;
+        margin-right: 1rem;
+
+        @include respondTo(mobile){
+            font-size: $fz-xs;
+        }
+
+        @at-root .news_short &{
+            color: $color-main;
+            font-size: 54px;
+            font-family: $ff-mid;
+            line-height: 1.33;
+            margin-bottom: 4px;
+            margin-right: 0;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            @include respondTo(mobileMin){
+                width: 71px;
+            }
+
+            @include respondTo(mobile){
+                font-size: $fz-xs;
+                color: $color-txt-sec;
+                line-height: 1.5;
+                flex-direction: row;
+                font-family: $fz-def;
+            }
+        }
+
+        & span{
+            font-size: $fz-def;
+            color: $color-txt;
+            line-height: 1;
+
+            @include respondTo(mobile){
+                font-size: $fz-xs;
+                color: $color-txt-sec;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    &__category{
+        border-radius: 2px;
+        padding: 0px 16px 0px 0px;
+        text-decoration: none;
+        color: #677B82;
+        font-size: $fz-sm;
+        line-height: 1.5;
+        transition: border-color ease .3s;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0rem 1rem .25rem 0;
+        display: inline-block;
+        &_bord{
+            border: 1px solid $color-border;
+        }
+
+        @include respondTo(tablet){
+            font-size: $fz-sm;
+        }
+
+        @include respondTo(mobile){
+            font-size: $fz-xs;
+        }
+
+        @include respondTo(small){
+            margin-right: .5rem;
+            max-width: 270px;
+        }
+
+        @at-root .news-sidebar &{
+            border: none;
+            padding: 0;
+            transition: color ease .3s;
+            font-size: $fz-sm;
+
+            &:hover{
+                color: $color-hover;
+            }
+        }
+
+
+        &:hover{
+            border-color: $color-hover;
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+
+    &__txt{
+        font-family: $ff-bold;
+        color: $color-main;
+        line-height: 1.33;
+        text-decoration: none;
+        transition: color ease .3s;
+        display: block;
+        &:not(:last-child){
+            margin-bottom: 8px;
+        }
+
+        @include respondTo(small){
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        @at-root .news_short &{
+            color: $color-txt;
+            font-size: $fz-def;
+            line-height: 1.33;
+            font-family: $ff-base;
+
+            @include respondTo(mobile){
+                font-size: $fz-sm;
+                line-height: 1.43;
+            }
+        }
+
+        @at-root .news-sidebar &{
+            font-family: $ff-base;
+            line-height: 1.33;
+            font-size: $fz-def;
+            color: $color-txt;
+        }
+
+        &:hover{
+            color: $color-hover;
+        }
+        &_second {
+            font-size: 0.7rem;
+            color: $color-secondary;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+
+        @include respondTo(mobile){
+            padding-top: 16px;
+        }
+
+        @include respondTo(small){
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        @at-root .news-sidebar &{
+            padding-top: 8px;
+        }
+        &_tiny {
+            padding-top: 10px;
+        }
+    }
+
+    &__slider{
+        padding-top: 24px;
+    }
+
+    &_short{
+        flex-direction: row;
+        margin-top: 40px;
+
+        @at-root .news-block__aside &{
+            margin-top: 66px;
+            @include respondTo(tablet){
+                margin-top: 40px;
+            }
+            @include respondTo(mobile){
+                margin-top: 24px;
+            }
+        }
+        
+        &:first-child{
+            margin-top: 0px;
+        }
+        
+        @include respondTo(mobile){
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 24px;
+            &_column {
+                &:first-of-type{
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}

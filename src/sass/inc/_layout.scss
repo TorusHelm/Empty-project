@@ -1,0 +1,220 @@
+html,
+body {
+    height: 100%;
+    font-family: $ff-base;
+    font-size: $fz-def;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+
+a, input, select, button{
+    outline: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.c-wrap{
+    @extend %c-wrap;
+}
+
+.d-wrap {
+    @extend %d-wrap;
+    &__left {
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+}
+.e-wrap {
+    @extend %e-wrap;
+}
+.s-wrap {
+    @extend %s-wrap;
+}
+
+.main-block{
+    position: relative;
+    padding: 30px 0 $gap-lg;
+
+    &__banner {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+    @include respondTo(tablet){
+        // padding-bottom: $gap-xl;
+    }
+
+    @include respondTo(mobile){
+        padding: 14px 0 $gap-md;
+    }
+}
+
+.more-block{
+    padding: 24px 0 16px;
+    display: none;
+
+    &.is-show{
+        display: block;
+    }
+    &_big{
+        padding: $gap-big 0px;
+        @include respondTo(mobile){
+            padding: $gap-md 0px;
+        }
+    }
+}
+
+.section{
+    padding: $gap-lg 0;
+    
+    @include respondTo(tablet){
+        padding: $gap-md 0;
+    }
+
+    @include respondTo(mobile){
+        padding: $gap 0;
+    }
+
+    &_gray{
+        background-color: $color-gray;
+    }
+
+    &_shadow {
+        box-shadow: 0px 2px 28px 0px rgba(151, 162, 167, 0.15);
+    }
+    
+    &_first{
+        @include respondTo(mobile){
+            padding-top: 6px;
+        }
+    }
+
+    &_news{
+        padding: $gap-md 0 $gap-xl;
+
+        @include respondTo(tablet){
+            padding-top: $gap;
+        }
+
+        @include respondTo(mobile){
+            padding-bottom: $gap;
+        }
+    }
+
+    &_rating{
+        padding: $gap-xl 0 $gap-md;
+
+        @include respondTo(tablet){
+            padding: $gap 0;
+        }
+
+        @include respondTo(mobile){
+            padding: 6px 0 24px;
+        }
+    }
+
+    &_big{
+        padding: $gap-xl 0px;
+        @include respondTo(mobile){
+            padding: $gap-lg 0px;
+        }
+        @include respondTo(small){
+            padding: $gap-md 0px;
+        }
+    }
+    &_bottom{
+        padding: 0 0 $gap-lg 0;
+    
+        @include respondTo(tablet){
+            padding: 0 0 $gap-md 0;
+        }
+    
+        @include respondTo(mobile){
+            padding: 0 0 $gap 0;
+        }
+    }
+    &_bigBottom{
+        padding-bottom: $gap-xl;
+        @include respondTo(mobile){
+            padding-bottom: $gap-lg;
+        }
+        @include respondTo(small){
+            padding-bottom: $gap-md;
+        }
+    }
+
+    &_page-nav{
+        background-color: $color-gray;
+        padding: 0 0 $gap-md;
+
+        @include respondTo(tablet){
+            padding: 16px 0 0;
+            background-color: $color-white;
+        }
+
+        @include respondTo(mobile){
+            display: none;
+        }
+    }
+
+    &_table{
+        padding: $gap-md 0 0;
+
+        @include respondTo(tablet){
+            padding: 48px 0 0;
+        }
+
+        @include respondTo(mobile){
+            padding: $gap 0 0;
+        }
+
+        &:last-of-type{
+            padding-bottom: $gap-lg;
+
+            @include respondTo(mobile){
+                padding-bottom: $gap-md;
+            }
+        }
+    }
+    &_last{
+        padding: $gap-md 0 0;
+        @include respondTo(tablet){
+            padding: 48px 0 0;
+        }
+        @include respondTo(mobile){
+            padding: $gap 0 0;
+        }
+    }
+}
+.page-wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @supports (display: grid) {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        -ms-grid-rows: auto 1fr auto;
+        grid-template-columns: 100%;
+        -ms-grid-columns: 100%;
+    }
+}
+#__next {
+    height: 100%;
+}
+.flex-counter{
+     display: flex;
+     flex-direction: column;
+     flex: 1 0 auto;
+}

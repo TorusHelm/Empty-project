@@ -1,0 +1,39 @@
+.filter-block{
+
+    @at-root .section_rating &{
+        margin-top: 64px;
+
+        @include respondTo(mobile){
+            margin-top: 40px;
+        }
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+    }
+
+    &__col{
+        flex: 1 0 45%;
+        margin-right: $gap;
+
+        @include respondTo(small){
+            flex: 0 0 100%;
+            margin-right: 0;
+            margin-bottom: 26px;
+        }
+
+        &:nth-child(2n){
+            margin-right: 0;
+
+            @include respondTo(small){
+                margin-bottom: 0;
+            }
+        }
+    }
+}

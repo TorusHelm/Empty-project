@@ -1,0 +1,166 @@
+.card{
+    $root: #{&};
+    width: calc(50% - 20px);
+    margin-bottom: $gap;
+    border: 1px solid $color-border;
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+
+    &__title{
+        font-family: $ff-mid;
+        line-height: 1.33;
+        color: $color-txt;
+        font-size: $fz-def;
+        margin-bottom: .22em;
+
+        @include respondTo(small){
+            font-size: 16px;
+            line-height: 1.25;
+        }
+    }
+
+    &_lg{
+        @extend .card;
+        padding: 40px;
+        #{$root}__title{
+            margin-bottom: 24px;
+            font-family: $ff-bold;
+        }
+        #{$root}__txt:not(:last-child){
+            margin-bottom: 24px;
+        }
+        .link-show-more {
+            padding: 0 28px;
+        }
+        &-wrapp{
+            margin-bottom: -$gap;
+            display: flex;
+            flex-direction: row;
+            @include respondTo(mobile){
+                margin-bottom: -20px;
+                flex-direction: column;
+            }
+        }
+    }
+
+    @include respondTo(tablet){
+        width: calc(50% - 16px);
+    }
+
+    @include respondTo(mobile){
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    &__txt{
+        line-height: 24px;
+        letter-spacing: 0;
+
+        &_gray{
+            color: $color-accident;
+        }
+    }
+
+    &__ico{
+        position: absolute;
+        left: 0;
+        top: calc(50% - 8px);
+        transition: ease .3s;
+    }
+    &__title{
+        font-family: $ff-mid;
+        line-height: 1.33;
+        color: $color-txt;
+        font-size: $fz-def;
+        margin-bottom: .22em;
+
+        @include respondTo(small){
+            font-size: 16px;
+            line-height: 1.25;
+        }
+    }
+
+    &__body{
+        p{
+            line-height: 1.29;
+            font-size: $fz-sm;
+            color: $color-accident;
+        }
+    }
+
+    &__footer{
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__unit{
+        color: $color-main;
+        line-height: .9;
+        font-family: $ff-bold;
+        font-size: $fz-sm*2;
+
+        & span{
+            line-height: 1.29;
+            font-size: $fz-sm;
+            font-family: $ff-base;
+        }
+
+        & sup{
+            display: inline-block;
+            font-size: .6em;
+            position: relative;
+            top: -5px;
+        }
+
+        &_accent{
+            font-size: $fz-sm;
+            line-height: 1.29;
+            font-family: $ff-mid;
+            color: $color-hover;
+
+            @include respondTo(small){
+                font-size: $fz-xs;
+            }
+        }
+    }
+
+    &_short{
+        width: calc(25% - 30px);
+        margin-bottom: 0;
+        min-height: 170px;
+
+        @include respondTo(desktop){
+            width: calc(50% - 20px);
+            margin-top: 40px;
+
+            &:nth-child(1),
+            &:nth-child(2){
+                margin-top: 0;
+            }
+        }
+
+        @include respondTo(tablet){
+            width: calc(50% - 16px);
+            margin-top: 32px;
+        }
+
+        @include respondTo(mobile){
+            width: 100%;
+            margin-top: 20px;
+
+            &:nth-child(2){
+                margin-top: 20px;
+            }
+
+        }
+
+        & .card__unit span{
+            color: $color-accident;
+        }
+    }
+}

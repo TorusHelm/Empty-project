@@ -1,0 +1,24 @@
+$font-dir: '../fonts/';
+
+@font-face {
+    font-family: 'dinpro-regular';
+    src: url($font-dir + 'DINPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dinpro-meduim';
+    src: url($font-dir + 'DINPro-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dinpro-bold';
+    src: url($font-dir + 'DINPro-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+

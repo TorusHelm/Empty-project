@@ -1,0 +1,96 @@
+//row
+.flex-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    &_gap-between{
+        justify-content: space-between;
+    }
+    &_gap-around{
+        justify-content: space-around;
+    }
+
+    &_centr{
+        justify-content: center;
+    }
+    &_vcenter {
+        align-items: center;
+    }
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+//columns
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.col-4{
+    flex: 0 0 34%;
+
+    &:not(:last-child){
+        padding-right: $gap;
+    }
+}
+
+.col-8{
+    flex: 0 0 66%;
+}
+
+.col-7{
+    flex: 0 0 56.95%;
+}
+
+.col-6{
+    flex: 1 0 45%;
+}
+
+.col-5{
+    flex: 0 0 41.6%;
+}
+
+.col-4{
+    flex: 0 0 31.1%;
+}
+
+.col-3{
+    flex: 0 0 25%;
+}
+
+.col-lg-12{
+
+    @include respondTo(desktop){
+        flex: 0 0 100%;
+        padding-right: 0;
+    }
+}
+
+.col-md-12{
+
+    @include respondTo(tablet){
+        flex: 0 0 100%;
+        padding-right: 0;
+    }
+}
+
+.col-md-6 {
+    @include respondTo(tablet){
+        flex: 0 0 50%;
+    }
+}
+
+.col-sm-12 {
+    @include respondTo(mobile){
+        flex: 0 0 100%;
+    }
+}
+
+//helpers
+.align-right{
+    margin-left: auto;
+}

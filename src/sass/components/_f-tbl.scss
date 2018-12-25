@@ -1,0 +1,238 @@
+.f-tbl{
+    margin: 40px 0 16px;
+    display: flex;
+    flex-direction: column;
+
+    @include respondTo(tablet){
+        margin: 16px 0;
+    }
+
+    &__row{
+        display: flex;
+        align-items: center;
+        padding: 24px 0;
+        border-bottom: 1px solid $color-border;
+        &_start{
+            align-items: flex-start;
+        }
+        &_caption{
+            align-items: flex-end;
+        }
+
+        &_centr{
+            justify-content: center;
+        }
+        &_main, &_mobile{
+            padding: 14px 0px;
+            .f-tbl{
+                &__cell{
+                    &_year{
+                        font-size: $fz-big;
+                        line-height: 40px;
+                        color: $color-txt;
+                        font-family: $ff-bold;
+                    }
+                    @include respondTo(mobile){
+                        &_year{
+                            font-size: 21px;
+                        }
+                    }
+                    &_mounth{
+                        color: $color-accident;
+                    }
+                }
+            }
+        }
+        &_mobile{
+            @include respondTo(min-mobile){
+                display: none;
+            }
+            &-mb{
+                margin-bottom: 14px;
+            }
+            @include respondTo(small){
+                .f-tbl{
+                    &__cell{
+                        &_mounth{
+                            font-size: $fz-xs;
+                        }
+                    }
+                }
+            }
+            &-wrap{
+                @include respondTo(mobile){
+                    flex-wrap: wrap;
+                    border-bottom: none;
+                    padding-top: 0px;
+                    .f-tbl{
+                        &__row{
+                            &_mobile{
+                                flex: 0 0 100%;
+                            }
+                        }
+                        &__cell{
+                           &_year{
+                               flex: 0 0 100%;
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__cell{
+        line-height: 1.33;
+        color: $color-txt;
+
+        @at-root .f-tbl__row_caption &{
+            font-size: $fz-sm;
+            line-height: 1.29;
+            color: $color-txt-sec;
+            text-align: left;
+        }
+
+        @at-root .f-tbl__row_bold &{
+            font-family: $ff-mid;
+        }
+
+        &_pos{
+            flex: 0 0 70px;
+            text-align: center;
+            position: relative;
+
+            &:before{
+                content: "";
+                width: 10px;
+                height: 140%;
+                background: -o-repeating-radial-gradient(#d8d8d8,#d8d8d8 1px,transparent 1px,transparent 100%);
+                background: repeating-radial-gradient(#d8d8d8,#d8d8d8 1px,transparent 0,transparent 100%);
+                background-size: 5px 5px;
+                position: absolute;
+                top: -20%;
+                bottom: -20%;
+                left: 0;
+                cursor: move;
+
+                @at-root .f-tbl__row_caption &{
+                    display: none;
+                }
+            }
+        }
+
+        &_name{
+            padding-left: 35px;
+            padding-right: 10px;
+            flex: 0 0 243px;
+        }
+
+        &_volume{
+            flex: 0 0 206px;
+            padding-right: 38px;
+
+            @include respondTo(tablet){
+                flex: 0 0 167px;
+                padding-right: 32px;
+            }
+        }
+
+        &_share{
+            flex: 0 0 149px;
+            padding-right: 41px;
+
+            @include respondTo(tablet){
+                flex: 0 0 132px;
+                padding-right: 32px;
+            }
+        }
+
+        &_gain{
+            color: $color-hover;
+            flex-grow: 1;
+        }
+        &_date{
+            flex: 0 0 125px;
+            padding-right: 40px;
+            @include respondTo(tablet){
+                padding-right: 32px;
+            }
+            @include respondTo(mobile){
+                font-size: $fz-xs;
+                line-height: 1.5;
+                color: $color-accident;
+                margin-bottom: 4px;
+                padding-right: 10px;
+                flex: 0 0 70px;
+            }
+        }
+        &_type{
+            flex: 0 0 200px;
+            padding-right: 20px;
+            @include respondTo(mobile){
+                font-size: $fz-xs;
+                line-height: 1.5;
+                color: $color-accident;
+                margin-bottom: 4px;
+                padding-right: 10px;
+                flex: 1 0 192px;
+            }
+        }
+        &_anons{
+            flex-grow: 1;
+            @include respondTo(mobile){
+                flex-basis: 100%;
+            }
+        }
+        &_year{
+            flex: 0 0 200px;
+            @include respondTo(mobile){
+                font-size: 16px;
+            }
+        }
+
+        &_mounth{
+            flex: 1 0 auto;
+            text-align: center;
+            @include respondTo(mobile){
+                text-align: left;
+                .download-link{
+                    margin-left: 20%;
+                }
+            }
+        }
+
+    }
+
+    &__cell{
+        &_avmonth{
+            display: flex;
+            width: 100%;
+            .f-tbl__cell_mounth{
+                flex: 1 0 auto;
+                text-align: center;
+                @include respondTo(mobile){
+                    text-align: left;
+                    .download-link{
+                        margin-left: 20%;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &_hide-mbl{
+        @include respondTo(mobile){
+            display: none;
+        }
+    }
+    &__hscroll{
+        @include respondTo(tablet){
+            overflow-x: scroll;
+            padding-bottom: 5px;
+        }
+    }
+    &__fixwidth{
+        min-width: 689px;
+    }
+}

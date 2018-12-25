@@ -1,0 +1,76 @@
+//select
+.select{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(7, 40, 51, 0.23);
+    font-size: $fz-def;
+    line-height: 1.33;
+    color: $color-main;
+    padding: 0 0 16px;
+    appearance: none;
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include respondTo(small){
+        font-size: 16px;
+        padding-bottom: $fz-xs;
+    }
+
+    &__list{
+        max-height: 300px;
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        z-index: 100;
+        background-color: $color-white;
+        border: 1px solid rgba(7, 40, 51, 0.23);
+        padding: 0 24px;
+    }
+
+    &__list-item{
+        color: $color-txt;
+        border-bottom: 1px solid rgba(7, 40, 51, 0.23);
+        font-size: $fz-def;
+        padding: 1em 0;
+        line-height: 1.33;
+    }
+}
+
+//select wrapper
+.select-block{
+    position: relative;
+
+    &:before{
+        content: '';
+        /*background: url('../img/ico-arrow-drop.svg') no-repeat;*/
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 0;
+        bottom: 16px;
+    }
+
+    &.is-open{
+        &:before{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+//label
+.lbl{
+    font-size: $fz-sm;
+    line-height: 1.29;
+    color: $color-accident;
+    display: inline-block;
+    padding: 0 2px;
+
+    @include respondTo(small){
+        font-size: $fz-xs;
+    }
+}
+.form-def{
+    width: 100%;
+}

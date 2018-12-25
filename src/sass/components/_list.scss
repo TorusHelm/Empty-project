@@ -1,0 +1,147 @@
+.list {
+    &__description {
+        display: block;
+        font-size: $fz-sm;
+    }
+    &_close {
+        max-height: 0px;
+        // overflow: hidden;
+        margin-top: 0px;
+    }
+    &__item {
+        margin-top: 48px;
+        // padding-left: 0;
+        padding-left: 25px;
+        @include respondTo(tablet) {
+            margin-top: 20px;
+        }
+        &_dots {
+            position: relative;
+            &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                left: 0px;
+                top: 11px;
+                background-color: $color-secondary;
+                border-radius: 50%;
+            }
+        }
+        &_number {
+            list-style-type: decimal;
+            list-style-position: inside;
+            padding-left: 0px;
+            margin-top: 10px;
+        }
+        &_mt-0 {
+            margin-top: 0px;
+        }
+        & .list{
+            padding-left: 25px;
+            //border-left: 1px solid $list-border;
+            margin: 0;
+            transition: all 0.6s ease;
+            position: relative;
+            &::after{
+                content: '';
+                height: 100%;
+                border-left: 1px solid $list-border;
+                position: absolute;
+                left: -25px;
+                bottom: 0;
+            }
+            &__item{
+                padding-left: 0;
+            }
+        }
+    }
+    &__in {
+        padding-left: 25px;
+        margin-left: -25px;
+        &::before {
+            content: '';
+            height: 12px;
+            width: 2px;
+            position: absolute;
+            background-color: $color-g-green;
+            left: 5px;
+            top: 7px;
+            transition: all 0.1s;
+        }
+        &::after {
+            content: '';
+            height: 2px;
+            width: 12px;
+            position: absolute;
+            background-color: $color-g-green;
+            left: 0px;
+            top: 12px;
+        }
+        &_open {
+            &::before {
+                height: 0px;
+            }
+            & ~ .list {
+                max-height: 5000px;
+            }
+        }
+        // &_open + .list_close {
+        //     max-height: 1000px;
+        // }
+        &_close{
+            & ~ .list {
+                margin-top: 0px;
+                overflow: hidden;
+                transition: all 0.1s;
+            }
+        }
+        &:hover {
+            color: $color-hover;
+        }
+    }
+    &__link {
+        color: $color-txt;
+        text-decoration: none;
+        line-height: 1.33;
+        position: relative;
+        display: block;
+        transition: color 0.6s ease;
+
+        &_big {
+            font-weight: bold;
+            font-size: 22px;
+            @include respondTo(mobile) {
+                font-size: 18px;
+            }
+        }
+    }
+    &__link:not(.list__in) {
+    
+        &:hover{
+            color: $color-hover;
+            &:before{
+                background-position: 0 15px;
+            }
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            background-image: url('../img/ico-download.svg');
+            background-size: 10px 15px;
+            background-repeat: repeat-y;
+            border-bottom: 2px solid $color-hover;
+            left: -25px;
+            top: 7px;
+            width: 10px;
+            height: 15px;
+            display: inline-block;
+            transition: all ease .3s;
+        }
+        & span{
+            color: $color-main;
+            white-space: nowrap;
+            line-height: 1;
+        }
+    }
+}

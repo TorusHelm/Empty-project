@@ -1,0 +1,80 @@
+.title-block{
+    display: flex;
+    margin-bottom: $col;
+
+    @at-root .section &{
+        margin-bottom: 64px;
+        align-items: flex-end;
+
+        @include respondTo(tablet){
+            margin-bottom: 40px;
+        }
+
+        @include respondTo(mobile){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        @include respondTo(small){
+            margin-bottom: 32px;
+        }
+    }
+
+    @include respondTo(desktop){
+        margin-bottom: 80px;
+    }
+
+    @include respondTo(tablet){
+        margin-bottom: 64px;
+    }
+
+    @include respondTo(mobile){
+        margin-bottom: 46px;
+        flex-wrap: wrap;
+    }
+
+    &__img{
+        flex: 0 0 42%;
+        margin-left: auto;
+        text-align: right;
+
+        @include respondTo(desktop){
+            display: none;
+        }
+    }
+
+    &__title{
+        flex: 0 0 58%;
+        margin-top: 86px;
+        &_full{
+            flex: 0 0 100%;
+        }
+        &_botbord{
+            border-bottom: 1px solid $color-border;
+            padding-bottom: 25px;
+        }
+        @include respondTo(desktop){
+            flex: 0 0 100%;
+            margin-top: 0px;
+        }
+    }
+    .btn {
+        margin-top: 40px;
+    }
+    &_sm{
+        margin-bottom: 24px;
+        @include respondTo(tablet){
+            margin-bottom: 40px;
+        }
+    }
+    &__description {
+        font-size: 20px;
+        font-family: $ff-mid;
+        line-height: 1.33;
+        margin-top: 40px;
+        display: block;
+        &_thin {
+            font-family: $ff-base;
+        }
+    }
+}

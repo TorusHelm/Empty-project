@@ -1,0 +1,54 @@
+.info-banner{
+    background-color: #ffffff;
+    padding: 40px 40px 47px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @include respondTo(mobile){
+        background-color: $color-white;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: -32px;
+        margin-right: -32px;
+        width: calc(100% + 64px);
+        padding: 32px;
+        margin-bottom: 32px;
+    }
+
+    @include respondTo(small){
+        margin-left: -24px;
+        margin-right: -24px;
+        width: calc(100% + 48px);
+    }
+
+    &__body{
+        padding-left: 40px;
+
+        @include respondTo(mobile){
+            padding-left: 0;
+            padding-top: 18px;
+        }
+    }
+
+    &__par{
+        color: $color-accident;
+        line-height: 1.33;
+
+        @include respondTo(mobile){
+            font-size: 16px;
+            line-height: 1.25;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: $color-txt;
+        border-bottom: 1px solid $color-hover;
+    }
+
+    &__img{
+        flex-shrink: 0;
+        width: 126px;
+    }
+}

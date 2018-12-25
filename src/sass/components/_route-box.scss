@@ -1,0 +1,117 @@
+.route-box{
+    @extend %fixed-screen;
+
+    &__wrap{
+        padding: 40px 0;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        background: url('../img/bg-route.svg') no-repeat 50% 50% / 709px 709px;
+
+        @include respondTo(tablet){
+            background: none;
+        }
+
+        @include respondTo(tablet){
+            height: auto;
+        }
+    }
+
+    &__line{
+        border-top: 1px solid rgba(151,151,151,.38);
+        margin: 40px 0;
+        height: 0;
+        color: transparent;
+
+        @include respondTo(tablet){
+            margin: 24px 0;
+        }
+    }
+
+    &__link{
+        color: $color-white;
+        font-size: $fz-def;
+        text-decoration: none;
+        transition: color ease .3s;
+
+        @include respondTo(desktop){
+            font-size: 16px;
+        }
+
+        &:hover{
+            color: $color-hover;
+            text-decoration: none;
+        }
+
+        &_main{
+            font-size: 32px;
+            line-height: 1.25;
+            font-family: $ff-bold;
+
+            @include respondTo(desktop){
+                font-size: 24px;
+            }
+
+            @include respondTo(tablet){
+                padding-bottom: 8px;
+                display: inline-block;
+            }
+
+            @include respondTo(mobile){
+                padding-bottom: 0;
+                font-size: $fz-point;
+            }
+        }
+
+        &.more-link{
+            font-size: $fz-sm;
+
+            @include respondTo(mobile){
+                font-size: $fz-xs;
+            }
+        }
+
+        & .more-link__ico{
+            fill: $color-white;
+        }
+    }
+
+    &__row{
+        display: flex;
+
+        @include respondTo(tablet){
+            flex-direction: column;
+        }
+    }
+
+    &__col{
+        flex: 0 0 25%;
+        padding: 0 24px;
+
+        @include respondTo(tablet){
+            padding: 0;
+            flex: 0 0 auto;
+        }
+
+        &:last-of-type{
+            padding-right: 0;
+        }
+
+        &:first-of-type{
+            padding-left: 0;
+        }
+    }
+
+    &__list{
+        & li{
+            margin-bottom: 24px;
+
+            @include respondTo(tablet){
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

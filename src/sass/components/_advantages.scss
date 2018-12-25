@@ -1,0 +1,83 @@
+.advantages{
+    display: flex;
+
+    @include respondTo(tablet){
+        flex-wrap: wrap;
+    }
+
+    &__item{
+        width: 30%;
+        margin-right: 5%;
+
+        @include respondTo(tablet){
+            width: 80%;
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+
+        @include respondTo(small){
+            width: 100%;
+        }
+
+        &:last-of-type{
+            margin-right: 0;
+
+            @include respondTo(desktop){
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__box{
+        display: flex;
+
+        @include respondTo(desktop){
+            flex-direction: column;
+        }
+    }
+
+    &__img{
+        width: 70px;
+        flex-shrink: 0;
+    }
+
+    &__desc{
+        font-family: $ff-bold;
+        line-height: 1.33;
+        color: $color-main;
+        font-size: $fz-def;
+        width: 72%;
+
+        @include respondTo(desktop){
+            padding-top: 1.33em;
+            width: 100%;
+        }
+
+        @include respondTo(tablet){
+            width: 72%
+        }
+
+        @include respondTo(small){
+            font-size: 16px;
+            padding-top: 1em;
+            line-height: 1.25;
+        }
+    }
+
+    &__txt{
+        font-size: $fz-def;
+        line-height: 1.33;
+        color: $color-accident;
+        padding-top: 1.33em;
+
+        @include respondTo(desktop){
+            padding-top: 16px;
+        }
+
+        @include respondTo(small){
+            padding-top: .75em;
+            line-height: 1.25;
+            font-size: 16px;
+        }
+    }
+}

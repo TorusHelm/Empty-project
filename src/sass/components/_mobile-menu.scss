@@ -1,0 +1,122 @@
+.mobile-menu{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    width: 100vw;
+    transition: all ease .3s;
+
+    &:before{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(#000,.4);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity ease .3s;
+    }
+
+    &.is-open{
+        visibility: visible;
+        opacity: 1;
+
+        &:before{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__wrap{
+        background-color: $color-white;
+        width: 368px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        transition: transform ease .3s;
+        height: 100vh;
+
+        @at-root .is-open &{
+            transform: translateX(0);
+        }
+
+        @include respondTo(small){
+            width: 280px;
+        }
+    }
+
+    &__header{
+        padding: 32px 20px 27px;
+        border-bottom: 1px solid $color-border;
+        display: flex;
+
+        @include respondTo(small){
+            padding: 30px 24px;
+        }
+    }
+
+    &__body{
+        padding: 8px 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__link{
+        padding-top: 2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $color-main;
+        font-size: $fz-sm;
+        font-family: $ff-bold;
+        letter-spacing: .14em;
+        line-height: 1.67;
+        display: inline-block;
+
+        @include respondTo(small){
+            font-size: $fz-xs;
+        }
+    }
+
+    &__close-btn{
+        width: 40px;
+        height: 40px;
+        margin-left: auto;
+        cursor: pointer;
+        position: relative;
+
+        @include respondTo(small){
+            width: 24px;
+            height: 24px;
+        }
+
+        &:before,
+        &:after{
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 22px;
+            height: 2px;
+            background-color: $color-main;
+            transform: rotate(45deg);
+            left: 9px;
+
+            @include respondTo(small){
+                width: 16px;
+                top: 11px;
+                left: 4px;
+            }
+        }
+
+        &:after{
+            transform: rotate(-45deg);
+        }
+    }
+}

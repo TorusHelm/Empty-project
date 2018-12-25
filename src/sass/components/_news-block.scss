@@ -1,0 +1,29 @@
+.news-block{
+    display: flex;
+
+    @include respondTo(tablet){
+        flex-wrap: wrap;
+    }
+
+    &__main{
+        background-color: $color-white;
+        flex: 0 0 39.8%;
+        margin-right: 8.4%;
+
+        @include respondTo(tablet){
+            flex: 0 0 100%;
+            margin: 0 0 64px;
+        }
+        @include respondTo(mobile){
+            margin: 0 0 24px;
+        }
+    }
+
+    &__aside{
+        flex: 0 0 50%;
+
+        @include respondTo(tablet){
+            flex: 0 0 100%;
+        }
+    }
+}

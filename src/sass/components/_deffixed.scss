@@ -1,0 +1,60 @@
+.information, .finance {
+    .tabs {
+        &__nav {
+            @include respondTo(desktop) {
+                border-bottom: none;
+                overflow-x: scroll;
+                width: auto;
+                margin-left: -20px;
+                padding-left: 20px;
+                margin-right: -20px;
+                padding-right: 20px;
+            }
+            .nav {
+                &__link {
+                    @include respondTo(desktop) {
+                        position: static;
+                    }
+                    &_menu {
+                        padding: 18px 0 30px 40px;
+                    }
+                    @include respondTo(tablet) {
+                        font-size: $fz-xs;
+                        padding-bottom: 22px;
+                        padding-right: 20px;
+                    }
+                }
+                &__submenu {
+                    @include respondTo(desktop) {
+                        top: initial;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        &__link {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include respondTo(desktop) {
+                overflow: visible;
+            }
+        }
+    }
+    .nav {
+        &__submenu {
+            .tabs {
+                &__link {
+                    @include respondTo(desktop) {
+                        overflow: hidden;
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+.deal {
+    &.main-block {
+        min-height: 100vh;
+    }
+}

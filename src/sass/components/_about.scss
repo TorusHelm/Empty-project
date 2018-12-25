@@ -1,0 +1,12 @@
+.about {
+    .title-block {
+        &__description {
+            color: $color-main;
+            margin-top: 40px;
+            display: block;
+            &_thin {
+                margin-top: 40px;
+            }
+        }
+    }
+}

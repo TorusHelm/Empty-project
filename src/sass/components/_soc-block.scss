@@ -1,0 +1,69 @@
+.soc-block{
+    display: flex;
+    align-items: center;
+
+    &__link{
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 1px solid #9ba9ad;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 24px;
+        position: relative;
+
+        @include respondTo(desktop){
+            width: 44px;
+            height: 44px;
+            margin-left: 16px;
+        }
+
+        @include respondTo(mobile){
+            margin-left: 18px;
+        }
+
+        &:first-of-type{
+            margin-left: 0;
+        }
+
+        &:before{
+            content: '';
+            position: absolute;
+            background-color: $color-white;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: transform ease .3s;
+        }
+
+        &:hover{
+
+            &:before{
+                transform: scale(1);
+            }
+
+            & .soc-block__icon{
+                fill: $color-txt;
+            }
+        }
+    }
+
+    &__icon{
+        fill: $color-white;
+        width: 18px;
+        height: 18px;
+        transition: fill ease .3s;
+        position: relative;
+        z-index: 10;
+        fill-rule: evenodd;
+
+        @include respondTo(desktop){
+            width: 15px;
+            height: 15px;
+        }
+    }
+}

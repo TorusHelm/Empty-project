@@ -1,0 +1,126 @@
+.footer{
+    background-color: $color-main;
+    color: $color-white;
+    padding: 64px 0;
+    margin-top: auto;
+
+    @include respondTo(mobile){
+        padding: 40px 0;
+    }
+
+    &__row{
+        display: flex;
+        padding-bottom: 40px;
+
+        @include respondTo(mobile){
+            flex-direction: column;
+            padding-bottom: 0;
+        }
+
+        &_last{
+            padding-bottom: 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(#f8f8f8,.2);
+            display: flex;
+            justify-content: space-between;
+
+            @include respondTo(mobile){
+                flex-direction: row;
+            }
+
+            @include respondTo(small){
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        font-size: $fz-def;
+        line-height: 1;
+        color: $color-accident;
+        transition: color ease .3s;
+
+        &:hover{
+            color: $color-hover;
+        }
+
+        @include respondTo(small){
+            padding-bottom: 1em;
+
+            &:last-of-type{
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &__col{
+        padding-right: 105px;
+
+        @include respondTo(desktop){
+            padding-right: 60px;
+        }
+
+        @include respondTo(tablet){
+            padding-right: 30px;
+        }
+
+        @include respondTo(mobile){
+            padding: 0 0 24px;
+        }
+
+        &_right{
+            padding-right: 0;
+            margin-left: auto;
+
+            @include respondTo(mobile){
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__phone{
+        color: $color-white;
+        text-decoration: none;
+        font-size: $fz-mid;
+        font-family: $ff-bold;
+        line-height: 1.5;
+        transition: color ease .3s;
+
+        &:hover{
+            color: $color-hover;
+        }
+
+        @include respondTo(desktop){
+            font-size: $fz-def;
+            line-height: 1.4;
+        }
+
+        @include respondTo(mobile){
+            font-size: $fz-mid;
+            line-height: 1.33;
+        }
+    }
+
+    &__mail{
+        color: $color-white;
+        line-height: 1.33;
+        font-size: $fz-def;
+        text-decoration: none;
+        transition: color ease .3s;
+
+        &:hover{
+            color: $color-hover;
+        }
+    }
+
+    &__location{
+        color: $color-white;
+        line-height: 1.33;
+        padding-top: .5em;
+
+        @include respondTo(desktop){
+            padding-top: 0;
+        }
+    }
+}

@@ -1,0 +1,127 @@
+//title
+.page-title{
+    font-family: $ff-bold;
+    line-height: 1.14;
+    color: $color-main;
+    font-size: $fz-xxl;
+
+    @include respondTo(mobile){
+        font-size: 30px;
+        line-height: 1.33;
+    }
+    &_big {
+        @include respondTo(mobile){
+            font-size: $fz-xxl;
+        }
+        @include respondTo(small){
+            font-size: $fz-big;
+        }
+    }
+
+    &_alone{
+        margin-top: 16px;
+
+        @include respondTo(tablet){
+            margin-top: 0;
+        }
+    }
+
+    @at-root .section_rating &{
+        margin-bottom: 40px;
+
+        @include respondTo(mobile){
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.section-title{
+    font-family: $ff-bold;
+    color: $color-main;
+    line-height: 1.25;
+    font-size: $fz-big;
+
+    @include respondTo(mobile){
+        font-size: $fz-point;
+        line-height: 1.5;
+        margin-bottom: 16px;
+        flex: 0 0 100%;
+    }
+
+    @at-root .section_table &{
+        font-size: 30px;
+        margin-bottom: 1.33em;
+        line-height: 1.4;
+
+        @include respondTo(tablet){
+            margin-bottom: 0.8em;
+        }
+
+        @include respondTo(mobile){
+            font-size: $fz-point;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.section-subtitle {
+    font-size: $fz-big;
+    font-family: $ff-mid;
+    flex: 0 0 58%;
+    margin-top: 40px;
+    color: $color-hover;
+}
+
+.content-title{
+    font-size: $fz-mid;
+    font-family: $ff-base;
+    line-height: 1.67;
+    color: $color-main;
+    margin-bottom: 24px;
+
+    @include respondTo(mobile){
+        font-size: 16px;
+    }
+}
+
+//paragraph
+.par{
+    font-family: $ff-base;
+    line-height: 1.33;
+    font-size: $fz-def;
+    color: $color-accident;
+
+    @include respondTo(mobile){
+        font-size: 16px;
+    }
+
+    @at-root .more-block &{
+        margin-bottom: 2.22em;
+
+        @include respondTo(mobile){
+            margin-bottom: 1.5em;
+        }
+
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+    }
+
+    &_aside{
+        padding-right: $col;
+        margin-top: 3.5em;
+        margin-bottom: 1em;
+
+        @include respondTo(desktop){
+            padding-right: 0;
+            margin-top: 2.2em;
+            padding-bottom: 46px;
+        }
+
+        @include respondTo(mobile){
+            margin-top: 0;
+            padding-bottom: 22px;
+        }
+    }
+}

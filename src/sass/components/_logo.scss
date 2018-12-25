@@ -1,0 +1,30 @@
+//header logo
+.logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &__img{
+        width: 48px;
+        height: 48px;
+        margin-right: 12px;
+    }
+
+    &__txt{
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        color: $color-txt;
+        font-size: $fz-sm;
+        font-family: $ff-bold;
+        letter-spacing: 1.2px;
+        line-height: 1.29;
+        padding-left: 12px;
+        border-left: 3px solid $color-main;
+        height: 48px;
+
+        @include respondTo(small){
+            display: none;
+        }
+    }
+}

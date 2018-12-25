@@ -1,0 +1,203 @@
+//search wrapper
+.search-box{
+    @extend %fixed-screen;
+
+    padding-top: 40px;
+
+    @include respondTo(mobile){
+        padding-top: 20px;
+    }
+}
+
+//search form
+.search-input{
+    width: 100%;
+    border: 1px solid rgba(255,255,255,.18);
+    padding: 44px 90px 44px 64px;
+    position: relative;
+
+    @include respondTo(tablet){
+        padding-left: 40px;
+        padding-right: 70px;
+    }
+
+    @include respondTo(mobile){
+        padding: 22px 40px 22px 22px;
+    }
+
+    &__field{
+        font-size: $fz-mid;
+        line-height: 1.2;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: $color-white;
+        width: 100%;
+        &::placeholder{
+            color: $color-accident;
+        }
+
+        @include respondTo(mobile){
+            font-size: 16px;
+        }
+    }
+
+    &__submit{
+        position: absolute;
+        right: 62px;
+        background: url('../img/ico-search_submit.svg') no-repeat 50% 50% / 18px 18px;
+        width: 24px;
+        height: 24px;
+        font-size: 0;
+        text-indent: -9999px;
+        overflow: hidden;
+        border: none;
+        outline: none;
+        top: calc(50% - 12px);
+        cursor: pointer;
+
+        @include respondTo(tablet){
+            right: 40px;
+        }
+
+        @include respondTo(mobile){
+            right: 16px;
+            background-size: 12px 12px;
+        }
+    }
+}
+
+//search filter
+.search-filter{
+    display: flex;
+    align-items: center;
+
+    &__link{
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-size: $fz-sm;
+        font-family: $ff-mid;
+        line-height: 1.7;
+        letter-spacing: 2px;
+        color: $color-accident;
+        margin-right: 40px;
+        padding-bottom: 38px;
+        border-bottom: 2px solid $color-hover;
+        cursor: pointer;
+
+        @include respondTo(mobile){
+            padding-bottom: 20px;
+            font-size: $fz-xs;
+            margin-right: 32px;
+        }
+
+        &:last-of-type{
+            margin-right: 0;
+        }
+
+        &.is-active,
+        &:hover{
+            color: $color-white;
+        }
+    }
+}
+
+//search query
+.search-qq{
+    margin-top: 40px;
+    display: flex;
+    padding-left: 58px;
+    position: relative;
+
+    @include respondTo(mobile){
+        padding-left: 36px;
+        margin-top: 24px;
+    }
+
+    &__title{
+        font-size: $fz-sm;
+        line-height: 1.29;
+        color: $color-white;
+        transform: rotate(-90deg);
+        font-family: $ff-base;
+        position: absolute;
+        left: -58px;
+        top: 60px;
+
+        @include respondTo(mobile){
+            font-size: $fz-xs;
+            opacity: .55;
+            left: -52px;
+        }
+    }
+
+    &__list{
+        margin: 0;
+        padding: 0;
+
+        & li{
+            margin-bottom: 40px;
+            opacity: 0;
+
+            @include respondTo(mobile){
+                margin-bottom: 24px;
+            }
+
+            &:nth-child(1){
+                opacity: 1;
+            }
+            &:nth-child(2){
+                opacity: .9;
+            }
+            &:nth-child(3){
+                opacity: .8;
+            }
+            &:nth-child(4){
+                opacity: .7;
+            }
+            &:nth-child(5){
+                opacity: .6;
+            }
+            &:nth-child(5){
+                opacity: .5;
+            }
+            &:nth-child(6){
+                opacity: .4;
+            }
+            &:nth-child(7){
+                opacity: .3;
+            }
+            &:nth-child(8){
+                opacity: .2;
+            }
+            &:nth-child(9){
+                opacity: .1;
+            }
+
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__link{
+        font-size: $fz-mid;
+        line-height: 1.33;
+        color: $color-white;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color ease .3s;
+
+        @include respondTo(mobile){
+            font-size: $fz-point;
+        }
+
+        &:hover{
+            color: $color-hover;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.nav{
+
+    &__link{
+        text-transform: uppercase;
+        color: $color-txt-sec;
+        font-size: $fz-sm;
+        letter-spacing: .14em;
+        line-height: 1.71;
+        font-family: $ff-mid;
+        text-decoration: none;
+        margin-left: $gap;
+        padding: 38px 0 33px;
+        display: inline-block;
+        transition: color ease .3s;
+        cursor: pointer;
+
+        &:hover,
+        &.current{
+            color: $color-txt;
+        }
+
+        //для удобства выпадающего меню
+        //у пункта "еще" - область клика больше
+        &:last-of-type{
+            margin-left: 0;
+            padding-left: $gap;
+        }
+
+        &_menu{
+            position: relative;
+            .sub-menu{
+                &__link{
+                    display: flex;
+                    align-items: baseline;
+                }
+            }
+
+            &:hover{
+                & > .nav__submenu{
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @at-root .tabs &{
+                padding: 18px 0 30px 40px;
+                margin-left: auto;
+                // margin-left: $gap;
+            }
+        }
+        @at-root .tabs &{
+            @include respondTo(tablet) {
+                font-size: $fz-xs;
+                padding-bottom: 22px;
+                padding-right: 20px;
+            }
+        }
+    }
+
+    &__submenu{
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 10;
+        top: 100%;
+        right: 0;
+        transition: all ease .3s;
+        transform: translateY(100px);
+    }
+}
+
+//выпадающее меню
+.sub-menu{
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    width: auto;
+    // max-width: 273px;
+    padding: 26px 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+
+    &__link{
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $color-txt-sec;
+        font-size: $fz-sm;
+        padding: 1em 0;
+        line-height: 1.71;
+        letter-spacing: .14em;
+        border-bottom: 1px solid $color-border;
+        display: block;
+        transition: color ease .3s;
+
+        &:hover{
+            color: $color-txt;
+        }
+
+        &:last-of-type{
+            border-bottom: none;
+        }
+    }
+    &__ico{
+        margin-right: 12px;
+        flex: 0 0 15px;
+    }
+
+}

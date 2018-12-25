@@ -1,0 +1,62 @@
+%c-wrap{
+    max-width: 1248px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+
+    @include respondTo(desktop){
+        padding: 0 32px;
+    }
+
+    @include respondTo(small){
+        padding: 0 24px;
+    }
+}
+%d-wrap{
+    max-width: 832px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include respondTo(desktop){
+        padding: 0 32px;
+    }
+
+    @include respondTo(small){
+        padding: 0 24px;
+    }
+}
+%e-wrap{
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include respondTo(tablet){
+        max-width: 560px;
+    }
+}
+%s-wrap{
+    @include respondTo(small){
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 0px;
+    }
+}
+
+%fixed-screen{
+    background-color: $color-main;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 36px;
+    border-top: 1px solid rgba(#979797,.38);
+    height: calc(100vh - 36px);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity ease .4s;
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+        z-index: 1001;
+    }
+}
